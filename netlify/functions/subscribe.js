@@ -12,6 +12,9 @@ exports.handler = async function(event) {
   }
 
   const { email, firstName } = body;
+  const nameParts = (firstName || '').trim().split(/\s+/);
+  const first = nameParts[0] || '';
+  const last = nameParts.slice(1).join(' ') || '';
   console.log('Received email:', JSON.stringify(email), 'firstName:', JSON.stringify(firstName));
   if (!email) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Email is required' }) };
@@ -27,7 +30,8 @@ exports.handler = async function(event) {
       body: JSON.stringify({
         email,
         fields: [
-          { slug: 'first_name', value: firstName || '' }
+          { slug: 'first_name', value: first },
+          { slug: 'last_name', value: last }
         ]
       })
     });
