@@ -32,6 +32,8 @@ exports.handler = async function(event) {
 
     // 201 = created, 409/422 with "already used" = already exists — all fine
     if (res.status === 201 || res.status === 409 || res.ok) {
+      const responseData = await res.json().catch(() => ({}));
+      console.log('Systeme.io success response:', JSON.stringify(responseData));
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
