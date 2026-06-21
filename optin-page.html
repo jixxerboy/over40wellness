@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Guide – The Over-40 Health Reset | Over40Wellness.com</title>
+  <meta name="description" content="Get your free guide: 4 things that actually work after 40 — sleep, energy, joints and brain clarity." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:       #3B6D11;
+      --green-mid:   #639922;
+      --green-light: #EAF3DE;
+      --green-pale:  #F4FAF0;
+      --text:        #1A1A1A;
+      --muted:       #5F6368;
+      --border:      #E0E0E0;
+      --white:       #FFFFFF;
+      --radius:      10px;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--green-pale);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo { font-size: 1.15rem; font-weight: 700; color: var(--green); }
+    .logo span { color: var(--text); font-weight: 400; }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+    }
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      max-width: 860px;
+      width: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── LEFT PANEL ── */
+    .left {
+      background: var(--green);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .guide-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #C0DD97;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+      width: fit-content;
+    }
+    .left h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -0.3px;
+      margin-bottom: 1rem;
+    }
+    .left h1 em { font-style: normal; color: #C0DD97; }
+    .left p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+    .what-inside { margin-top: 0.5rem; }
+    .what-inside h3 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #C0DD97;
+      margin-bottom: 0.75rem;
+    }
+    .chapter {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .chapter-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .chapter-text {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.4;
+    }
+    .chapter-text strong { color: var(--white); }
+
+    /* ── RIGHT PANEL ── */
+    .right {
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .right h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.2px;
+    }
+    .right p.sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.55;
+    }
+    .form-group { margin-bottom: 1rem; }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus { border-color: var(--green); }
+    .submit-btn {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 0.85rem 1.5rem;
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover { background: #27500A; }
+    .privacy {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .privacy-icon { font-size: 0.9rem; }
+    .trust-row {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .trust-item span.tick { color: var(--green); font-weight: 700; }
+
+    /* ── SUCCESS STATE ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .success-msg .big-tick {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .success-msg h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .success-msg p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .card { grid-template-columns: 1fr; }
+      .left { padding: 2rem 1.5rem; }
+      .right { padding: 2rem 1.5rem; }
+      .left h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Over40<span>Wellness</span></div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+
+      <!-- LEFT: What they get -->
+      <div class="left">
+        <div class="guide-tag">📘 Free Guide</div>
+        <h1>The Over-40<br/><em>Health Reset</em></h1>
+        <p>4 things that actually work after 40 — no fluff, no expensive programmes, just what the evidence says.</p>
+        <div class="what-inside">
+          <h3>What's inside:</h3>
+          <div class="chapter">
+            <span class="chapter-icon">😴</span>
+            <span class="chapter-text"><strong>Sleep & Recovery</strong> — why your sleep has changed and what fixes it</span>
+          </div>
+          <div class="chapter">
+            <span class="chapter-icon">⚡</span>
+            <span class="chapter-text"><strong>Energy & Metabolism</strong> — how to get your energy back naturally</span>
+          </div>
+          <div class="chapter">
+            <span class="chapter-icon">🦵</span>
+            <span class="chapter-text"><strong>Joints & Movement</strong> — the inflammation connection and what helps</span>
+          </div>
+          <div class="chapter">
+            <span class="chapter-icon">🧠</span>
+            <span class="chapter-text"><strong>Brain & Mental Clarity</strong> — clear the fog and stay sharp</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: The form -->
+      <div class="right">
+        <div id="formArea">
+          <h2>Get your free guide</h2>
+          <p class="sub">Enter your details below and we'll send it straight to your inbox.</p>
+
+          <form id="optinForm">
+            <div class="form-group">
+              <label for="fname">First name</label>
+              <input type="text" id="fname" name="name" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+
+            <button type="submit" class="submit-btn">Send Me the Free Guide →</button>
+          </form>
+
+          <div class="privacy">
+            <span class="privacy-icon">🔒</span>
+            <span>No spam, ever. Unsubscribe anytime. Your email is safe with us.</span>
+          </div>
+          <div class="trust-row">
+            <div class="trust-item"><span class="tick">✓</span> Independent reviews</div>
+            <div class="trust-item"><span class="tick">✓</span> No paid placements</div>
+            <div class="trust-item"><span class="tick">✓</span> Real-world testing</div>
+          </div>
+        </div>
+
+        <!-- Success message shown after submit -->
+        <div class="success-msg" id="successMsg">
+          <div class="big-tick">✅</div>
+          <h3>You're in! Your guide is ready.</h3>
+          <p>Click the button below to download your free Over-40 Health Reset Guide right now.</p>
+          <a href="/Over-40-Health-Reset-Guide.pdf" download style="display:inline-block;margin-top:1.25rem;background:#3B6D11;color:#fff;padding:0.85rem 1.75rem;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;">⬇ Download Your Free Guide</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 <a href="#">Over40Wellness.com</a> &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Affiliate Disclosure</a></p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('optinForm');
+    const formArea = document.getElementById('formArea');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const firstName = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, firstName })
+        });
+
+        if (response.ok) {
+          formArea.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          const err = await response.json().catch(() => ({}));
+          console.error('Subscribe error:', err);
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        console.error('Network error:', err);
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
