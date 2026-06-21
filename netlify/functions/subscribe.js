@@ -27,7 +27,7 @@ exports.handler = async function(event) {
       body: JSON.stringify({
         email,
         fields: [
-          { slug: 'firstname', value: firstName || '' }
+          { slug: 'first_name', value: firstName || '' }
         ]
       })
     });
