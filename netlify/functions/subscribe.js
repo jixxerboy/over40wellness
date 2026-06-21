@@ -31,7 +31,7 @@ exports.handler = async function(event) {
         email,
         fields: [
           { slug: 'first_name', value: first },
-          { slug: 'last_name', value: last }
+          { slug: 'surname', value: last }
         ]
       })
     });
