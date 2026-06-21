@@ -12,6 +12,7 @@ exports.handler = async function(event) {
   }
 
   const { email, firstName } = body;
+  console.log('Received email:', JSON.stringify(email), 'firstName:', JSON.stringify(firstName));
   if (!email) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Email is required' }) };
   }
