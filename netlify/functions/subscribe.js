@@ -41,8 +41,24 @@ exports.handler = async function(event) {
 
     const errText = await res.text().catch(() => '');
     console.log('Systeme.io error:', res.status, errText);
-    // Treat duplicate email as success
+    // If duplicate, find the contact and update their name
     if (errText.includes('already used')) {
+      try {
+        const searchRes = await fetch(`https://api.systeme.io/api/contacts?email=${encodeURIComponent(email)}`, {
+          headers: { 'X-API-Key': API_KEY }
+        });
+        const searchData = await searchRes.json();
+        const contact = searchData.items && searchData.items[0];
+        if (contact && firstName) {
+          await fetch(`https://api.systeme.io/api/contacts/${contact.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json', 'X-API-Key': API_KEY },
+            body: JSON.stringify({ firstName })
+          });
+        }
+      } catch (e) {
+        console.log('Could not update existing contact:', e.message);
+      }
       return {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
