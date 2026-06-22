@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Reviews – Over 40 Wellness</title>
+  <meta name="description" content="Honest, independent product reviews for the over-40s. We test sleep aids, joint supports, and wellness gear — and only recommend what actually works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #3B6D11; --green-mid: #639922; --green-light: #EAF3DE;
+      --green-pale: #F4FAF0; --text: #1A1A1A; --text-muted: #5F6368;
+      --border: #E0E0E0; --white: #FFFFFF; --cta: #3B6D11; --cta-hover: #27500A;
+      --radius: 10px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); }
+    .logo span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--green-pale); padding: 3.5rem 2rem 2.5rem; text-align: center; border-bottom: 1px solid var(--border); }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.4px; }
+    .page-hero p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+
+    /* FILTER TABS */
+    .filter-bar { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .filter-btn { background: none; border: 1.5px solid var(--border); border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--white); }
+
+    /* REVIEWS GRID */
+    .reviews-grid { max-width: 900px; margin: 0 auto; padding: 2rem 2rem 5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.75rem; }
+
+    /* REVIEW CARD */
+    .review-card { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: box-shadow 0.2s; display: flex; flex-direction: column; }
+    .review-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+    .card-img { width: 100%; height: 220px; object-fit: cover; object-position: top; display: block; }
+    .card-img-placeholder { width: 100%; height: 220px; background: var(--green-light); display: flex; align-items: center; justify-content: center; color: var(--green-mid); font-size: 0.85rem; font-weight: 600; }
+
+    .card-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+    .card-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.18rem 0.65rem; border-radius: 20px; margin-bottom: 0.6rem; }
+    .card-title { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.4rem; }
+    .card-stars { color: #f5a623; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .card-rating-note { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .card-strap { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1.2rem; flex: 1; }
+
+    .card-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .btn-review { background: var(--cta); color: var(--white); padding: 0.45rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: background 0.2s; }
+    .btn-review:hover { background: var(--cta-hover); color: var(--white); }
+    .btn-price { background: none; border: 1.5px solid var(--green); color: var(--green); padding: 0.45rem 1rem; border-radius: 6px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+    .btn-price:hover { background: var(--green-light); }
+
+    /* COMING SOON CARD */
+    .review-card.coming-soon { opacity: 0.65; }
+    .coming-soon-badge { display: inline-block; background: var(--border); color: var(--text-muted); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.18rem 0.65rem; border-radius: 20px; margin-bottom: 0.6rem; }
+
+    /* FOOTER */
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.82rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; padding: 1.5rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">Over 40 <span>Wellness</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews/" class="active">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="#">Sleep &amp; Recovery</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <h1>Product Reviews</h1>
+    <p>Honest, independent testing — we only recommend products we'd actually use ourselves.</p>
+  </div>
+
+  <!-- FILTER TABS -->
+  <div class="filter-bar">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Sleep &amp; Recovery</button>
+    <button class="filter-btn">Joint Health</button>
+    <button class="filter-btn">Energy &amp; Metabolism</button>
+    <button class="filter-btn">Brain &amp; Focus</button>
+  </div>
+
+  <!-- REVIEWS GRID -->
+  <div class="reviews-grid">
+
+    <!-- CARD 1: Derila (live) -->
+    <div class="review-card">
+      <img src="/images/derila-ergo-pillow.jpg" alt="Derila Ergo Memory Foam Pillow" class="card-img" />
+      <div class="card-body">
+        <span class="card-tag">Sleep &amp; Recovery</span>
+        <div class="card-title">Derila Ergo Memory Foam Pillow</div>
+        <div class="card-stars">★★★★★</div>
+        <div class="card-rating-note">4.0 / 5 · 30,000+ reviews</div>
+        <p class="card-strap">Waking up with neck pain or snoring? This ergonomic pillow supports your spine's natural curve — and many users notice a difference from night one.</p>
+        <div class="card-actions">
+          <a href="/reviews/derila-ergo-pillow.html" class="btn-review">Read review</a>
+          <a href="#" class="btn-price">Check price →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Placeholder -->
+    <div class="review-card coming-soon">
+      <div class="card-img-placeholder">Review coming soon</div>
+      <div class="card-body">
+        <span class="coming-soon-badge">Joint Health · Coming soon</span>
+        <div class="card-title">Joint Support Supplement — 60-day test</div>
+        <div class="card-stars" style="color: var(--border);">★★★★★</div>
+        <div class="card-rating-note" style="visibility:hidden;">placeholder</div>
+        <p class="card-strap">We're currently testing a top-rated joint support formula for stiffness, mobility, and inflammation — results in 60 days.</p>
+        <div class="card-actions">
+          <span style="font-size:0.82rem; color: var(--text-muted); font-weight:600;">Review in progress…</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Placeholder -->
+    <div class="review-card coming-soon">
+      <div class="card-img-placeholder">Review coming soon</div>
+      <div class="card-body">
+        <span class="coming-soon-badge">Energy &amp; Metabolism · Coming soon</span>
+        <div class="card-title">Red Light Therapy Device — 30-day test</div>
+        <div class="card-stars" style="color: var(--border);">★★★★★</div>
+        <div class="card-rating-note" style="visibility:hidden;">placeholder</div>
+        <p class="card-strap">Red light therapy claims to boost energy, reduce inflammation, and improve skin. We're 2 weeks in — full verdict coming soon.</p>
+        <div class="card-actions">
+          <span style="font-size:0.82rem; color: var(--text-muted); font-weight:600;">Review in progress…</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Over 40 Wellness · <a href="#">Privacy Policy</a> · <a href="#">Affiliate Disclosure</a></p>
+    <p style="margin-top:0.4rem;">This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
+  </footer>
+
+</body>
+</html>
