@@ -239,7 +239,8 @@
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .blog-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
     .blog-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
-    .blog-img { background: var(--green-light); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--green-mid); }
+    .blog-img { background: var(--green-light); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--green-mid); overflow: hidden; }
+    .blog-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .blog-body { padding: 1.25rem; }
     .blog-cat { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); margin-bottom: 0.4rem; }
     .blog-card h3 { font-size: 1rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.5rem; }
@@ -424,7 +425,7 @@
       </div>
       <div class="blog-grid">
         <div class="blog-card">
-          <div class="blog-img">[ Image ]</div>
+          <div class="blog-img"><img src="/images/blog-sleep-exhausted.jpg" alt="Sleep & Recovery" /></div>
           <div class="blog-body">
             <div class="blog-cat">Sleep &amp; Recovery</div>
             <h3>Why you wake up exhausted (even after 8 hours)</h3>
@@ -436,7 +437,7 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-img">[ Image ]</div>
+          <div class="blog-img"><img src="/images/blog-energy-crash.jpg" alt="Energy & Metabolism" /></div>
           <div class="blog-body">
             <div class="blog-cat">Energy &amp; Metabolism</div>
             <h3>5 reasons your energy crashes at 3pm — and what to do</h3>
@@ -448,7 +449,7 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-img">[ Image ]</div>
+          <div class="blog-img"><img src="/images/blog-joint-pain.jpg" alt="Joint & Pain Relief" /></div>
           <div class="blog-body">
             <div class="blog-cat">Joint &amp; Pain Relief</div>
             <h3>The best pillows for neck pain in 2026 — ranked</h3>

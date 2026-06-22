@@ -100,18 +100,18 @@
 
   <!-- FILTER TABS -->
   <div class="filter-bar">
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Sleep &amp; Recovery</button>
-    <button class="filter-btn">Joint Health</button>
-    <button class="filter-btn">Energy &amp; Metabolism</button>
-    <button class="filter-btn">Brain &amp; Focus</button>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="sleep">Sleep &amp; Recovery</button>
+    <button class="filter-btn" data-filter="joint">Joint Health</button>
+    <button class="filter-btn" data-filter="energy">Energy &amp; Metabolism</button>
+    <button class="filter-btn" data-filter="brain">Brain &amp; Focus</button>
   </div>
 
   <!-- REVIEWS GRID -->
   <div class="reviews-grid">
 
     <!-- CARD 1: Derila (live) -->
-    <div class="review-card">
+    <div class="review-card" data-category="sleep">
       <img src="/images/derila-ergo-pillow.jpg" alt="Derila Ergo Memory Foam Pillow" class="card-img" />
       <div class="card-body">
         <span class="card-tag">Sleep &amp; Recovery</span>
@@ -127,8 +127,8 @@
     </div>
 
     <!-- CARD 2: Placeholder -->
-    <div class="review-card coming-soon">
-      <div class="card-img-placeholder">Review coming soon</div>
+    <div class="review-card coming-soon" data-category="joint">
+      <img src="/images/review-joint-supplement.jpg" alt="Joint Support Supplement" class="card-img" />
       <div class="card-body">
         <span class="coming-soon-badge">Joint Health · Coming soon</span>
         <div class="card-title">Joint Support Supplement — 60-day test</div>
@@ -142,14 +142,29 @@
     </div>
 
     <!-- CARD 3: Placeholder -->
-    <div class="review-card coming-soon">
-      <div class="card-img-placeholder">Review coming soon</div>
+    <div class="review-card coming-soon" data-category="energy">
+      <img src="/images/review-red-light.jpg" alt="Red Light Therapy Device" class="card-img" />
       <div class="card-body">
         <span class="coming-soon-badge">Energy &amp; Metabolism · Coming soon</span>
         <div class="card-title">Red Light Therapy Device — 30-day test</div>
         <div class="card-stars" style="color: var(--border);">★★★★★</div>
         <div class="card-rating-note" style="visibility:hidden;">placeholder</div>
         <p class="card-strap">Red light therapy claims to boost energy, reduce inflammation, and improve skin. We're 2 weeks in — full verdict coming soon.</p>
+        <div class="card-actions">
+          <span style="font-size:0.82rem; color: var(--text-muted); font-weight:600;">Review in progress…</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4: Placeholder -->
+    <div class="review-card coming-soon" data-category="brain">
+      <img src="/images/review-brain-focus.jpg" alt="Brain &amp; Focus Supplement" class="card-img" />
+      <div class="card-body">
+        <span class="coming-soon-badge">Brain &amp; Focus · Coming soon</span>
+        <div class="card-title">Nootropic Brain Support — 30-day test</div>
+        <div class="card-stars" style="color: var(--border);">★★★★★</div>
+        <div class="card-rating-note" style="visibility:hidden;">placeholder</div>
+        <p class="card-strap">Can a daily nootropic sharpen focus, cut brain fog, and support memory in your 40s and beyond? We're testing one of the most talked-about formulas right now.</p>
         <div class="card-actions">
           <span style="font-size:0.82rem; color: var(--text-muted); font-weight:600;">Review in progress…</span>
         </div>
@@ -163,5 +178,17 @@
     <p style="margin-top:0.4rem;">This site contains affiliate links. We may earn a commission at no extra cost to you.</p>
   </footer>
 
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        this.classList.add('active');
+        var filter = this.dataset.filter;
+        document.querySelectorAll('.review-card').forEach(function(card) {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
