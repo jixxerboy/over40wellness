@@ -15,7 +15,6 @@ exports.handler = async function(event) {
   const nameParts = (firstName || '').trim().split(/\s+/);
   const first = nameParts[0] || '';
   const last = nameParts.slice(1).join(' ') || '';
-  console.log('Received email:', JSON.stringify(email), 'firstName:', JSON.stringify(firstName));
   if (!email) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Email is required' }) };
   }
