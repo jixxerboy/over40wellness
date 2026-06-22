@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Over 40 Wellness</title>
+  <meta name="description" content="Health and wellness articles written for the over-40s. Sleep, energy, joints, and brain health — practical advice from someone who actually lives this stuff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #3B6D11; --green-mid: #639922; --green-light: #EAF3DE;
+      --green-pale: #F4FAF0; --text: #1A1A1A; --text-muted: #5F6368;
+      --border: #E0E0E0; --white: #FFFFFF; --cta: #3B6D11; --cta-hover: #27500A;
+      --radius: 10px;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; font-size: 16px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); }
+    .logo span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--green-pale); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 0.6rem; }
+    .page-hero p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+
+    /* FILTER TABS */
+    .filter-bar { max-width: 800px; margin: 0 auto; padding: 2rem 2rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .filter-btn { background: none; border: 1.5px solid var(--border); border-radius: 20px; padding: 0.35rem 1rem; font-size: 0.82rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--white); }
+
+    /* POST LIST */
+    .post-list { max-width: 800px; margin: 0 auto; padding: 1.5rem 2rem 4rem; }
+
+    .post-item { border-bottom: 1px solid var(--border); padding: 1.6rem 0; }
+    .post-item:last-child { border-bottom: none; }
+
+    .post-row { display: flex; align-items: flex-start; gap: 1.2rem; }
+
+    /* Date column */
+    .post-date-col { flex-shrink: 0; width: 100px; padding-top: 0.15rem; }
+    .post-date { font-size: 0.8rem; color: var(--text-muted); line-height: 1.3; }
+    .post-date strong { display: block; font-size: 1.15rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.15rem; }
+
+    /* Content column */
+    .post-content { flex: 1; }
+    .post-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.18rem 0.65rem; border-radius: 20px; margin-bottom: 0.5rem; }
+    .post-title { font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem; }
+    .post-title a:hover { color: var(--green); }
+
+    .post-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .btn-preview {
+      background: none;
+      border: 1.5px solid var(--green);
+      color: var(--green);
+      padding: 0.38rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-preview:hover { background: var(--green-light); }
+    .btn-preview.open { background: var(--green-light); }
+    .btn-preview .arrow { display: inline-block; transition: transform 0.2s; font-style: normal; }
+    .btn-preview.open .arrow { transform: rotate(180deg); }
+
+    .btn-read {
+      background: var(--cta);
+      color: var(--white);
+      padding: 0.38rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-read:hover { background: var(--cta-hover); color: var(--white); }
+
+    /* PREVIEW PANEL */
+    .post-preview {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease, opacity 0.25s ease;
+      opacity: 0;
+    }
+    .post-preview.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+    .post-preview-inner {
+      background: var(--green-pale);
+      border-left: 3px solid var(--green-mid);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1rem 1.2rem;
+      margin-top: 1rem;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .post-preview-inner a {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .post-preview-inner a:hover { text-decoration: underline; }
+
+    /* Hidden posts (filtered out) */
+    .post-item.hidden { display: none; }
+
+    /* FOOTER */
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .post-date-col { width: 72px; }
+      .post-date strong { font-size: 1rem; }
+      .filter-bar { padding: 1.5rem 1.2rem 0; }
+      .post-list { padding: 1rem 1.2rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">Over 40 <span>Wellness</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <h1>Blog</h1>
+    <p>Practical health advice for the over-40s — no fluff, no jargon. New post every day.</p>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All posts</button>
+    <button class="filter-btn" data-filter="sleep">Sleep &amp; Recovery</button>
+    <button class="filter-btn" data-filter="energy">Energy &amp; Metabolism</button>
+    <button class="filter-btn" data-filter="joint">Joint Health</button>
+    <button class="filter-btn" data-filter="brain">Brain &amp; Focus</button>
+  </div>
+
+  <div class="post-list" id="posts">
+    <!-- POSTS_START -->
+
+    <article class="post-item" data-pillar="sleep">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>22 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Sleep &amp; Recovery</span>
+          <h2 class="post-title"><a href="/blog/sleep-biological-age-brain.html">New Research: Poor Sleep Makes Your Brain Age Faster</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/sleep-biological-age-brain.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              A 2025 Nature study examined biological ageing clocks and found that people consistently sleeping under six hours had brains that appeared older than their chronological age. The optimal window for lowest biological brain age was 6.4 to 7.8 hours. Sleep fragmentation in middle age has been directly linked to increased Alzheimer's risk in later life — not as a distant possibility, but as a measurable mechanism.
+              <a href="/blog/sleep-biological-age-brain.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="energy">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>21 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Energy &amp; Metabolism</span>
+          <h2 class="post-title"><a href="/blog/muscle-power-longevity-over-40.html">Your Grip Strength Predicts How Long You'll Live</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/muscle-power-longevity-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              New research confirms grip strength is more predictive than blood pressure for cardiovascular disease, disability, and death. A May 2026 finding identified the sit-to-stand test as a reliable lifespan predictor. But there's a nuance most people miss: it's not just strength that matters — it's power, the ability to produce force quickly. And power declines faster with age than strength does.
+              <a href="/blog/muscle-power-longevity-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="brain">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>20 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Brain &amp; Focus</span>
+          <h2 class="post-title"><a href="/blog/gut-health-over-40.html">Your Gut Is Ageing — And It's Affecting Everything Else</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/gut-health-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              After 40, gut microbial diversity declines — beneficial bacteria decrease and inflammatory species fill the gap. 2025 research has made the connections clearer than ever: what's happening in your gut directly drives brain fog, joint inflammation, cardiovascular risk, and metabolic slowdown. The gut-brain axis is bidirectional, and 90% of your serotonin is made in your gut, not your brain.
+              <a href="/blog/gut-health-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="energy">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>19 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Energy &amp; Metabolism</span>
+          <h2 class="post-title"><a href="/blog/stress-cortisol-over-40.html">Why Stress Hits Differently After 40</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/stress-cortisol-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              After 40, cortisol stays elevated longer after a stressful event — the recovery is slower. Hormonal changes weaken the buffer that previously made you more resilient. The same workload that you'd have shrugged off at 32 can leave you genuinely depleted at 44. Here's what's changed biologically and what actually moves the needle.
+              <a href="/blog/stress-cortisol-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="joint">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>18 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Joint Health</span>
+          <h2 class="post-title"><a href="/blog/anti-inflammatory-foods-joint-pain.html">The Anti-Inflammatory Foods That Actually Help Joint Pain After 40</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/anti-inflammatory-foods-joint-pain.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              What you eat directly affects joint inflammation — not as a metaphor, but through measurable changes in inflammatory markers. Oily fish, extra virgin olive oil, and dark berries have the strongest evidence. But there are also specific foods actively making things worse: seed oils and refined sugar drive inflammatory pathways in ways that directly affect joint tissue.
+              <a href="/blog/anti-inflammatory-foods-joint-pain.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="energy">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>17 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Energy &amp; Metabolism</span>
+          <h2 class="post-title"><a href="/blog/fix-metabolism-after-40.html">How to Fix Your Metabolism After 40 (Without Going on a Diet)</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/fix-metabolism-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              The metabolic slowdown after 40 is real but much smaller than people assume — only around 1–2% per decade from pure ageing. The bigger culprit is muscle loss. Muscle burns more calories at rest than fat, and as it quietly disappears, your metabolic rate drops with it. The fix isn't a diet. It's building and protecting what you have.
+              <a href="/blog/fix-metabolism-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="brain">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>16 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Brain &amp; Focus</span>
+          <h2 class="post-title"><a href="/blog/brain-sharp-habits-over-40.html">7 Daily Habits That Keep Your Brain Sharp After 40</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/brain-sharp-habits-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              Neuroplasticity doesn't stop at 40 — it slows, but doesn't stop. The difference between people who stay sharp into their 60s and those who don't comes down largely to daily habits. Not genetics, not luck. Seven habits backed by solid evidence, realistic enough to actually do, and with effects that compound meaningfully over years.
+              <a href="/blog/brain-sharp-habits-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="joint">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>15 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Joint Health</span>
+          <h2 class="post-title"><a href="/blog/walking-for-joints-over-40.html">Why Walking Is the Best Thing You Can Do for Your Joints After 40</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/walking-for-joints-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              When joints hurt, most people rest them. For chronic joint discomfort, this usually makes things worse. Walking pumps synovial fluid around the joint, strengthens the muscles that protect it, and reduces systemic inflammation — three mechanisms that work simultaneously. The evidence for walking and osteoarthritis is among the most consistent in the field.
+              <a href="/blog/walking-for-joints-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="energy">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>14 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Energy &amp; Metabolism</span>
+          <h2 class="post-title"><a href="/blog/morning-routine-energy-over-40.html">The Over-40 Morning Routine That Actually Boosts Energy All Day</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/morning-routine-energy-over-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              This isn't a 5am cold-shower routine. It's five reordering changes to your existing morning that take no extra time — water before coffee, morning light within 30 minutes, protein-first breakfast, movement before sitting, and delaying caffeine by 90 minutes. Each one has a specific mechanism. Together they change your energy curve for the entire day.
+              <a href="/blog/morning-routine-energy-over-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="sleep">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>13 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Sleep &amp; Recovery</span>
+          <h2 class="post-title"><a href="/blog/wake-up-3am-after-40.html">Why You Wake Up at 3am and Can't Get Back to Sleep</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/wake-up-3am-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              The most common cause of the 3am wake-up isn't anxiety — it's a blood sugar crash. When blood sugar drops too low, your body releases cortisol to raise it. Cortisol is alerting. It wakes you up. A small protein snack before bed and cutting alcohol within three hours of sleep resolve this for most people within a week.
+              <a href="/blog/wake-up-3am-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="brain">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>12 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Brain &amp; Focus</span>
+          <h2 class="post-title"><a href="/blog/brain-fog-after-40.html">Brain Fog After 40: What's Causing It and How to Clear It</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/brain-fog-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              Walking into a room and forgetting why. Losing your train of thought mid-sentence. Reading the same paragraph three times. Brain fog has specific causes — poor sleep, hormonal changes, blood sugar swings, nutritional deficiencies — most of which are addressable. Clearing it makes a bigger difference to quality of life than almost any other health change you can make.
+              <a href="/blog/brain-fog-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="joint">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>11 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Joint Health</span>
+          <h2 class="post-title"><a href="/blog/joint-pain-worse-after-40.html">5 Things Making Your Joint Pain Worse After 40</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/joint-pain-worse-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              Most joint pain at this age isn't just ageing — it's lifestyle factors that are surprisingly fixable. Sitting too long without moving starves joints of the synovial fluid that lubricates them. Skipping warm-ups on cold tissue dramatically increases micro-damage. Chronic dehydration dries out cartilage. And avoiding movement because of pain usually makes things significantly worse, not better.
+              <a href="/blog/joint-pain-worse-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="energy">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>10 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Energy &amp; Metabolism</span>
+          <h2 class="post-title"><a href="/blog/energy-crash-after-40.html">Why Your Energy Crashed After 40 (And How to Get It Back)</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/energy-crash-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              That flat-battery feeling — the one coffee can't quite fix — has specific biological causes. Mitochondria produce less energy. Hormones shift. Blood sugar swings get bigger. Most people are significantly under-eating protein and don't realise it. Four targeted changes address the root causes and most people notice a difference within two weeks.
+              <a href="/blog/energy-crash-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post-item" data-pillar="sleep">
+      <div class="post-row">
+        <div class="post-date-col">
+          <div class="post-date"><strong>9 Jun</strong> 2026</div>
+        </div>
+        <div class="post-content">
+          <span class="post-tag">Sleep &amp; Recovery</span>
+          <h2 class="post-title"><a href="/blog/why-you-cant-sleep-after-40.html">Why You Can't Sleep After 40 (And What Actually Helps)</a></h2>
+          <div class="post-actions">
+            <button class="btn-preview" onclick="togglePreview(this)">Preview <i class="arrow">▾</i></button>
+            <a href="/blog/why-you-cant-sleep-after-40.html" class="btn-read">Read full post →</a>
+          </div>
+          <div class="post-preview">
+            <div class="post-preview-inner">
+              Sleep genuinely changes after 40 — less deep sleep, reduced melatonin, cortisol that takes longer to drop in the evenings. Two years of thinking it was just stress or too much coffee, and the root cause was biological all along. Once you understand what's actually happening, you can finally do something about it. Three changes, no supplements required.
+              <a href="/blog/why-you-cant-sleep-after-40.html">Read the full post →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- POSTS_END -->
+  </div>
+
+  <footer>
+    <p>© 2026 Over 40 Wellness · <a href="/optin-page.html">Free Guide</a></p>
+  </footer>
+
+  <script>
+    // Preview toggle
+    function togglePreview(btn) {
+      const item = btn.closest('.post-item');
+      const preview = item.querySelector('.post-preview');
+      const isOpen = preview.classList.contains('open');
+
+      // Close any other open previews
+      document.querySelectorAll('.post-preview.open').forEach(p => {
+        p.classList.remove('open');
+        p.closest('.post-item').querySelector('.btn-preview').classList.remove('open');
+        p.closest('.post-item').querySelector('.btn-preview').innerHTML = 'Preview <i class="arrow">▾</i>';
+      });
+
+      if (!isOpen) {
+        preview.classList.add('open');
+        btn.classList.add('open');
+        btn.innerHTML = 'Preview <i class="arrow">▾</i>';
+      }
+    }
+
+    // Filter by pillar
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.post-item').forEach(item => {
+          if (filter === 'all' || item.dataset.pillar === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+            // Close preview if hidden
+            item.querySelector('.post-preview').classList.remove('open');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
