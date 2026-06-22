@@ -197,6 +197,13 @@
     /* ── FEATURED REVIEW ── */
     .featured-bg { background: var(--green-pale); }
     .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .featured-product-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
     .featured-img-placeholder {
       background: var(--green-light);
       border-radius: var(--radius-lg);
@@ -278,6 +285,7 @@
       .pillars-grid { grid-template-columns: 1fr 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
       .featured-img-placeholder { height: 220px; }
+      .featured-product-img { height: 220px; }
       .featured-content h2 { font-size: 1.3rem; }
       .btn-outline, .btn-solid { display: block; text-align: center; margin: 0 0 0.5rem; }
       .blog-grid { grid-template-columns: 1fr; }
@@ -391,7 +399,7 @@
   <section class="section featured-bg">
     <div class="section-inner">
       <div class="featured-grid">
-        <div class="featured-img-placeholder">[ Product image ]</div>
+        <img src="/images/derila-ergo-pillow.jpg" alt="Derila Ergo Memory Foam Pillow" class="featured-product-img">
         <div class="featured-content">
           <span class="featured-tag">⭐ Editor's Pick</span>
           <h2>Derila Ergo Memory Foam Pillow — 30-day review</h2>
