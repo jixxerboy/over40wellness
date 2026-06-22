@@ -1,2 +1,9 @@
 # Local Netlify folder
 .netlify
+
+# Environment variables - never push these
+.env
+.env.local
+
+# Mac system files
+.DS_Store
