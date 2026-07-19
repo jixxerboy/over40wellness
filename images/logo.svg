@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100">
+  <!-- Horizontal logo: mountains left + text right -->
+  <rect width="520" height="100" fill="#ffffff"/>
+  <!-- Mountain peaks (scaled down, left aligned) -->
+  <g fill="none" stroke="#3B6D11" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <polyline points="10,82 38,30 52,52"/>
+    <polyline points="58,52 72,30 100,82"/>
+    <polyline points="36,82 55,12 74,82"/>
+    <line x1="8" y1="82" x2="102" y2="82"/>
+  </g>
+  <!-- OVER 40 WELLNESS text -->
+  <text x="122" y="52" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#2A2A2A" letter-spacing="2">OVER 40</text>
+  <text x="122" y="82" font-family="Arial, sans-serif" font-size="22" font-weight="600" fill="#2A2A2A" letter-spacing="5">WELLNESS</text>
+</svg>
