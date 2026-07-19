@@ -7,3 +7,6 @@
 
 # Mac system files
 .DS_Store
+
+# Personal local launcher (contains machine-specific paths)
+start-dev.command
