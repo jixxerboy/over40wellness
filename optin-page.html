@@ -7,7 +7,7 @@
   <meta name="description" content="Get your free guide: 4 things that actually work after 40 — sleep, energy, joints and brain clarity." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -20,7 +20,7 @@
       --border:      #E0E0E0;
       --white:       #FFFFFF;
       --radius:      10px;
-    }
+     --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--green-pale);
@@ -29,6 +29,8 @@
       display: flex;
       flex-direction: column;
     }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title, .featured-content h2, .email-banner h2, .card h2 { font-family: var(--font-serif); font-weight: 600; }
 
     /* ── NAV ── */
     nav {
@@ -44,9 +46,9 @@
       align-items: center;
       justify-content: center;
     }
-    .logo { font-size: 1.15rem; font-weight: 700; color: var(--green); }
-    .logo img { height: 46px; width: auto; display: block; }
-    .logo span { color: var(--text); font-weight: 400; }
+    .logo { font-size: 1.15rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
 
     /* ── MAIN ── */
     main {
@@ -69,14 +71,16 @@
 
     /* ── LEFT PANEL ── */
     .left {
-      background: var(--green);
+      background: linear-gradient(150deg, var(--green) 0%, var(--green-mid) 100%);
       padding: 3rem 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
     .guide-tag {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
       background: rgba(255,255,255,0.15);
       color: #C0DD97;
       font-size: 0.72rem;
@@ -119,9 +123,11 @@
       margin-bottom: 0.65rem;
     }
     .chapter-icon {
-      font-size: 1rem;
+      color: #FFFFFF;
       flex-shrink: 0;
       margin-top: 1px;
+      display: flex;
+      align-items: center;
     }
     .chapter-text {
       font-size: 0.85rem;
@@ -195,7 +201,7 @@
       font-size: 0.78rem;
       color: var(--muted);
     }
-    .privacy-icon { font-size: 0.9rem; }
+    .privacy-icon { color: var(--green); display: inline-flex; align-items: center; }
     .trust-row {
       display: flex;
       gap: 1.25rem;
@@ -211,7 +217,7 @@
       font-size: 0.78rem;
       color: var(--muted);
     }
-    .trust-item span.tick { color: var(--green); font-weight: 700; }
+    .trust-item span.tick { color: var(--green); display: inline-flex; align-items: center; }
 
     /* ── SUCCESS STATE ── */
     .success-msg {
@@ -220,8 +226,19 @@
       padding: 2rem 0;
     }
     .success-msg .big-tick {
-      font-size: 3rem;
+      display: flex;
+      justify-content: center;
       margin-bottom: 1rem;
+    }
+    .check-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #FFFFFF;
     }
     .success-msg h3 {
       font-size: 1.3rem;
@@ -253,40 +270,45 @@
       .right { padding: 2rem 1.5rem; }
       .left h1 { font-size: 1.5rem; }
     }
+  
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /></a>
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
     </div>
   </nav>
 
   <main>
-    <div class="card">
+    <div class="card reveal">
 
       <!-- LEFT: What they get -->
       <div class="left">
-        <div class="guide-tag">📘 Free Guide</div>
+        <div class="guide-tag"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><path d="M12 6.5c-1.5-1.2-3.5-1.8-6-1.8v13c2.5 0 4.5.6 6 1.8 1.5-1.2 3.5-1.8 6-1.8v-13c-2.5 0-4.5.6-6 1.8z"/><path d="M12 6.5v13"/></svg>Free Guide</div>
         <h1>The Over-40<br/><em>Health Reset</em></h1>
         <p>4 things that actually work after 40 — no fluff, no expensive programmes, just what the evidence says.</p>
         <div class="what-inside">
           <h3>What's inside:</h3>
           <div class="chapter">
-            <span class="chapter-icon">😴</span>
+            <span class="chapter-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
             <span class="chapter-text"><strong>Sleep & Recovery</strong> — why your sleep has changed and what fixes it</span>
           </div>
           <div class="chapter">
-            <span class="chapter-icon">⚡</span>
+            <span class="chapter-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="13 2 4 14 12 14 11 22 20 10 12 10 13 2"/></svg></span>
             <span class="chapter-text"><strong>Energy & Metabolism</strong> — how to get your energy back naturally</span>
           </div>
           <div class="chapter">
-            <span class="chapter-icon">🦵</span>
+            <span class="chapter-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="21 3 21 9 15 9"/><path d="M18.4 14a8 8 0 1 1-1.9-8.4L21 9"/></svg></span>
             <span class="chapter-text"><strong>Joints & Movement</strong> — the inflammation connection and what helps</span>
           </div>
           <div class="chapter">
-            <span class="chapter-icon">🧠</span>
+            <span class="chapter-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><path d="M9 4.5c-1.7 0-3 1.3-3 3 0 .4.1.8.2 1.1C4.9 9 4 10.3 4 11.8c0 1.3.7 2.5 1.8 3.1-.1.3-.2.7-.2 1.1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4V4.9c-.3-.2-.7-.4-1-.4z"/><path d="M15 4.5c1.7 0 3 1.3 3 3 0 .4-.1.8-.2 1.1 1.3.4 2.2 1.7 2.2 3.2 0 1.3-.7 2.5-1.8 3.1.1.3.2.7.2 1.1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4V4.9c.3-.2.7-.4 1-.4z"/><path d="M12 4.5v14"/></svg></span>
             <span class="chapter-text"><strong>Brain & Mental Clarity</strong> — clear the fog and stay sharp</span>
           </div>
         </div>
@@ -312,22 +334,22 @@
           </form>
 
           <div class="privacy">
-            <span class="privacy-icon">🔒</span>
+            <span class="privacy-icon"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
             <span>No spam, ever. Unsubscribe anytime. Your email is safe with us.</span>
           </div>
           <div class="trust-row">
-            <div class="trust-item"><span class="tick">✓</span> Independent reviews</div>
-            <div class="trust-item"><span class="tick">✓</span> No paid placements</div>
-            <div class="trust-item"><span class="tick">✓</span> Real-world testing</div>
+            <div class="trust-item"><span class="tick"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Independent reviews</div>
+            <div class="trust-item"><span class="tick"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> No paid placements</div>
+            <div class="trust-item"><span class="tick"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Real-world testing</div>
           </div>
         </div>
 
         <!-- Success message shown after submit -->
         <div class="success-msg" id="successMsg">
-          <div class="big-tick">✅</div>
+          <div class="big-tick"><span class="check-circle"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span></div>
           <h3>You're in! Your guide is ready.</h3>
           <p>Click the button below to download your free Over-40 Health Reset Guide right now.</p>
-          <a href="/Over-40-Health-Reset-Guide.pdf" download style="display:inline-block;margin-top:1.25rem;background:#3B6D11;color:#fff;padding:0.85rem 1.75rem;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;">⬇ Download Your Free Guide</a>
+          <a href="/Over-40-Health-Reset-Guide.pdf" download style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;margin-top:1.25rem;background:#3B6D11;color:#fff;padding:0.85rem 1.75rem;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><path d="M12 3v11"/><polyline points="7 10 12 15 17 10"/><path d="M4 19.5h16"/></svg>Download Your Free Guide</a>
         </div>
       </div>
 
@@ -376,5 +398,18 @@
     });
   </script>
 
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>

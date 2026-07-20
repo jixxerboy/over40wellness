@@ -6,7 +6,7 @@
   <title>Blog – Over 40 Wellness</title>
   <meta name="description" content="Health and wellness articles written for the over-40s. Sleep, energy, joints, and brain health — practical advice from someone who actually lives this stuff." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -14,16 +14,18 @@
       --green-pale: #F4FAF0; --text: #1A1A1A; --text-muted: #5F6368;
       --border: #E0E0E0; --white: #FFFFFF; --cta: #3B6D11; --cta-hover: #27500A;
       --radius: 10px;
-    }
+     --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif; }
     body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title, .featured-content h2, .email-banner h2, .card h2 { font-family: var(--font-serif); font-weight: 600; }
     a { color: inherit; text-decoration: none; }
 
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); }
-    .logo img { height: 46px; width: auto; display: block; }
-    .logo span { color: var(--text); font-weight: 400; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); }
@@ -31,7 +33,7 @@
     .nav-cta:hover { background: var(--cta-hover) !important; }
 
     /* PAGE HERO */
-    .page-hero { background: var(--green-pale); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+    .page-hero { background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 100%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
     .page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 0.6rem; }
     .page-hero p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto; }
 
@@ -135,12 +137,17 @@
       .filter-bar { padding: 1.5rem 1.2rem 0; }
       .post-list { padding: 1rem 1.2rem 3rem; }
     }
+  
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   </style>
 </head>
 <body>
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /></a>
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/blog/">Blog</a></li>
@@ -519,6 +526,19 @@
         });
       });
     });
+  </script>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
   </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="An honest review of the Derila Ergo Memory Foam Pillow. Does it actually fix neck pain, snoring, and poor sleep? We break it down for the over-40s." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -23,17 +23,19 @@
       --cta-hover:   #27500A;
       --radius:      10px;
       --amber:       #F59E0B;
-    }
+     --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif; }
     body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title, .featured-content h2, .email-banner h2, .card h2 { font-family: var(--font-serif); font-weight: 600; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; }
-    .logo img { height: 46px; width: auto; display: block; }
-    .logo span { color: var(--text); font-weight: 400; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); }
@@ -41,17 +43,29 @@
     .nav-cta:hover { background: var(--cta-hover) !important; }
 
     /* HERO */
-    .review-hero { background: var(--green-pale); padding: 3.5rem 2rem 2.5rem; text-align: center; border-bottom: 1px solid var(--border); }
-    .review-hero-inner { max-width: 760px; margin: 0 auto; }
+    .review-hero { background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 100%); padding: 3.5rem 2rem; border-bottom: 1px solid var(--border); overflow: hidden; }
+    .review-hero-grid { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .review-hero-inner { text-align: left; }
     .post-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.28rem 0.85rem; border-radius: 20px; margin-bottom: 1rem; }
-    .review-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 1rem; }
+    .review-hero h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.4px; margin-bottom: 1rem; }
     .hero-meta { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.2rem; }
-    .star-row { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .star-row { display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; margin-bottom: 1.5rem; }
     .stars { color: var(--amber); font-size: 1.2rem; letter-spacing: 2px; }
     .star-label { font-size: 0.9rem; color: var(--text-muted); }
-    .verdict-badge { display: inline-block; background: var(--green); color: var(--white); font-weight: 700; font-size: 0.85rem; padding: 0.4rem 1.1rem; border-radius: 20px; margin-bottom: 1.5rem; }
+    .verdict-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--green); color: var(--white); font-weight: 700; font-size: 0.85rem; padding: 0.4rem 1.1rem; border-radius: 20px; margin-bottom: 1.5rem; }
     .hero-cta-btn { display: inline-block; background: var(--cta); color: var(--white); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
     .hero-cta-btn:hover { background: var(--cta-hover); }
+    .review-hero-video { border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 24px 60px rgba(59,109,17,0.16); background: #000; }
+    .review-hero-video video { width: 100%; height: 400px; object-fit: cover; display: block; }
+    .review-hero-video .video-caption { background: var(--white); margin: 0; padding: 0.7rem 1rem; }
+    @media (max-width: 900px) {
+      .review-hero-video video { height: 280px; }
+    }
+    @media (max-width: 900px) {
+      .review-hero-grid { grid-template-columns: 1fr; }
+      .review-hero-inner { text-align: center; }
+      .star-row { justify-content: center; }
+    }
 
     /* BODY */
     .review-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 4rem; }
@@ -65,8 +79,6 @@
     .back-link:hover { text-decoration: underline; }
 
     /* VIDEO */
-    .video-wrap { margin: 2rem 0; border-radius: var(--radius); overflow: hidden; background: #000; }
-    .video-wrap video { width: 100%; display: block; }
     .video-caption { font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; }
 
     /* RESEARCH NOTE */
@@ -76,7 +88,7 @@
     /* PROS / CONS */
     .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
     .pros, .cons { background: var(--green-pale); border-radius: var(--radius); padding: 1.2rem 1.4rem; }
-    .pros h3, .cons h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.8rem; }
+    .pros h3, .cons h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.8rem; display: flex; align-items: center; gap: 0.4rem; }
     .pros h3 { color: var(--green); }
     .cons h3 { color: #B91C1C; }
     .pros ul, .cons ul { margin: 0; padding-left: 1.2rem; }
@@ -114,13 +126,18 @@
       .review-body { padding: 2rem 1.2rem 3rem; }
       .pros-cons { grid-template-columns: 1fr; }
     }
+  
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="nav-inner">
-      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /></a>
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/blog/">Blog</a></li>
@@ -130,16 +147,25 @@
   </nav>
 
   <section class="review-hero">
-    <div class="review-hero-inner">
-      <span class="post-tag">Sleep &amp; Recovery · Product Review</span>
-      <h1>Derila Ergo Memory Foam Pillow Review: Does It Actually Fix Neck Pain and Poor Sleep?</h1>
-      <p class="hero-meta">Reviewed by the Over 40 Wellness team &nbsp;·&nbsp; Updated June 2026 &nbsp;·&nbsp; 8 min read</p>
-      <div class="star-row">
-        <span class="stars">★★★★★</span>
-        <span class="star-label">4.6 / 5 &nbsp;·&nbsp; 30,000+ verified reviews</span>
+    <div class="review-hero-grid">
+      <div class="review-hero-inner">
+        <span class="post-tag">Sleep &amp; Recovery · Product Review</span>
+        <h1>Derila Ergo: The Pillow That Changed How I Sleep</h1>
+        <p class="hero-meta">Reviewed by the Over 40 Wellness team &nbsp;·&nbsp; Updated June 2026 &nbsp;·&nbsp; 8 min read</p>
+        <div class="star-row">
+          <span class="stars"><span style="display:inline-flex;align-items:center;gap:2px;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="12 2.5 14.9 9 21.8 9.6 16.6 14.1 18.2 20.9 12 17.2 5.8 20.9 7.4 14.1 2.2 9.6 9.1 9 12 2.5"/></svg><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="12 2.5 14.9 9 21.8 9.6 16.6 14.1 18.2 20.9 12 17.2 5.8 20.9 7.4 14.1 2.2 9.6 9.1 9 12 2.5"/></svg><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="12 2.5 14.9 9 21.8 9.6 16.6 14.1 18.2 20.9 12 17.2 5.8 20.9 7.4 14.1 2.2 9.6 9.1 9 12 2.5"/></svg><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="12 2.5 14.9 9 21.8 9.6 16.6 14.1 18.2 20.9 12 17.2 5.8 20.9 7.4 14.1 2.2 9.6 9.1 9 12 2.5"/></svg><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="12 2.5 14.9 9 21.8 9.6 16.6 14.1 18.2 20.9 12 17.2 5.8 20.9 7.4 14.1 2.2 9.6 9.1 9 12 2.5"/></svg></span></span>
+          <span class="star-label">4.6 / 5 &nbsp;·&nbsp; 30,000+ verified reviews</span>
+        </div>
+        <div class="verdict-badge"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg>Editor's Pick — Best Pillow for Over-40s</div><br>
+        <a href="#" class="hero-cta-btn">Check current price →</a>
       </div>
-      <div class="verdict-badge">✓ Editor's Pick — Best Pillow for Over-40s</div><br>
-      <a href="#" class="hero-cta-btn">Check current price →</a>
+      <div class="review-hero-video">
+        <video controls preload="metadata" poster="/reviews/derila-ergo-poster.jpg">
+          <source src="/reviews/derila-ergo-ad.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-caption">The Derila Ergo in action — designed for neck alignment and all sleep positions.</p>
+      </div>
     </div>
   </section>
 
@@ -149,14 +175,6 @@
     <p>If you're over 40 and waking up with a stiff neck, aching shoulders, or feeling like you barely slept — your pillow is almost certainly part of the problem. Most pillows are designed for comfort, not <em>support</em>. And once you hit your 40s, that distinction starts to matter a lot.</p>
 
     <p>We spent 30 days testing the <strong>Derila Ergo Memory Foam Pillow</strong> — one of the best-selling ergonomic pillows in the UK and US right now — to find out whether it lives up to the hype. Here's our honest verdict.</p>
-
-    <div class="video-wrap">
-      <video controls preload="metadata" poster="">
-        <source src="/reviews/derila-ergo-ad.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <p class="video-caption">The Derila Ergo in action — designed for neck alignment and all sleep positions.</p>
 
     <h2>Why Your Pillow Matters More After 40</h2>
     <p>As we age, the muscles and ligaments that support our cervical spine (the neck) naturally lose some of their elasticity. That means the position your head rests in for 7–8 hours matters <em>far</em> more than it did in your 30s. A pillow that's too flat, too high, or too soft leaves a gap between your neck and the mattress — forcing your muscles to compensate all night long.</p>
@@ -199,9 +217,9 @@
     </ul>
 
     <h2>Pros and Cons</h2>
-    <div class="pros-cons">
+    <div class="pros-cons reveal">
       <div class="pros">
-        <h3>✓ Pros</h3>
+        <h3><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg>Pros</h3>
         <ul>
           <li>Excellent cervical spine support</li>
           <li>Works for side and back sleepers</li>
@@ -212,7 +230,7 @@
         </ul>
       </div>
       <div class="cons">
-        <h3>✗ Cons</h3>
+        <h3><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>Cons</h3>
         <ul>
           <li>Adjustment period of 3–5 nights if you're used to a soft pillow</li>
           <li>Not ideal for strict stomach sleepers</li>
@@ -282,5 +300,18 @@
     <p>&copy; 2026 Over 40 Wellness. All rights reserved.</p>
   </footer>
 
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>

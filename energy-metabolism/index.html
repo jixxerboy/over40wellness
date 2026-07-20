@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy &amp; Metabolism After 40 | Over 40 Wellness</title>
+  <meta name="description" content="Honest advice and research on fixing your energy and metabolism after 40 — why the 3pm crash happens, and what actually works." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:       #3B6D11;
+      --green-mid:   #639922;
+      --green-light: #EAF3DE;
+      --green-pale:  #F4FAF0;
+      --text:        #1A1A1A;
+      --text-muted:  #5F6368;
+      --border:      #E0E0E0;
+      --white:       #FFFFFF;
+      --cta:         #3B6D11;
+      --cta-hover:   #27500A;
+      --radius:      10px;
+      --radius-lg:   16px;
+      --amber:       #F59E0B;
+      --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title { font-family: var(--font-serif); font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+
+    /* CATEGORY HERO */
+    .cat-hero { background: linear-gradient(135deg, var(--cream) 0%, var(--green-pale) 100%); padding: 4rem 2rem; overflow: hidden; }
+    .cat-hero-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+    .cat-hero-inner { text-align: left; }
+    .cat-tag { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.1rem; }
+    .cat-hero h1 { font-size: clamp(2rem, 4.2vw, 2.8rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 1rem; }
+    .cat-hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 480px; margin: 0 0 1.75rem; }
+    .cat-hero-cta { display: inline-block; background: var(--cta); color: var(--white); padding: 0.8rem 1.6rem; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
+    .cat-hero-cta:hover { background: var(--cta-hover); }
+    .cat-hero-visual {
+      border-radius: var(--radius-lg);
+      height: 380px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(59,109,17,0.18);
+    }
+    .cat-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 900px) {
+      .cat-hero-grid { grid-template-columns: 1fr; }
+      .cat-hero-inner { text-align: center; }
+      .cat-hero p { margin-left: auto; margin-right: auto; }
+      .cat-hero-visual { height: 240px; order: -1; }
+    }
+
+    /* SECTIONS */
+    .section { padding: 4rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.3px; margin-bottom: 0.75rem; }
+    .section-sub { color: var(--text-muted); font-size: 1rem; max-width: 620px; }
+    .section-header { margin-bottom: 2.5rem; }
+    .intro-text { max-width: 720px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; }
+    .intro-text strong { color: var(--text); }
+
+    /* COMING SOON CALLOUT */
+    .coming-soon-note { background: var(--green-pale); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .coming-soon-note p { font-size: 0.95rem; color: var(--text); max-width: 520px; }
+    .coming-soon-note p strong { color: var(--green); }
+    .coming-soon-note a { flex-shrink: 0; display: inline-block; border: 1.5px solid var(--green); color: var(--green); padding: 0.6rem 1.2rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600; transition: background 0.2s, color 0.2s; }
+    .coming-soon-note a:hover { background: var(--green); color: var(--white); }
+
+    /* ARTICLE LIST */
+    .article-list { display: flex; flex-direction: column; gap: 1rem; }
+    .article-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; transition: box-shadow 0.2s, transform 0.2s; }
+    .article-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .article-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .article-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; max-width: 620px; }
+    .article-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem; }
+    .article-read { flex-shrink: 0; font-size: 0.85rem; font-weight: 600; color: var(--green); white-space: nowrap; }
+    .article-read:hover { text-decoration: underline; }
+
+    /* EMAIL BANNER */
+    .email-banner { background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%); padding: 3.5rem 2rem; text-align: center; color: var(--white); }
+    .email-banner h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem; font-family: var(--font-serif); }
+    .email-banner p { font-size: 1rem; opacity: 0.85; margin-bottom: 1.5rem; }
+    .btn-white { display: inline-block; background: var(--white); color: var(--green); padding: 0.75rem 1.4rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 700; transition: opacity 0.2s; }
+    .btn-white:hover { opacity: 0.92; }
+
+    /* FOOTER */
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+    @media (max-width: 700px) {
+      .section { padding: 2.5rem 1.25rem; }
+      .article-item { flex-direction: column; gap: 0.75rem; }
+      .coming-soon-note { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <section class="cat-hero">
+    <div class="cat-hero-grid">
+      <div class="cat-hero-inner">
+        <div class="cat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polygon points="13 2 4 14 12 14 11 22 20 10 12 10 13 2"/></svg>One of Our 4 Core Pillars</div>
+        <h1>Energy &amp; Metabolism</h1>
+        <p>That flat-battery feeling isn't inevitable. Here's the honest, research-backed reason your energy crashed after 40 — and what actually gets it back, without another round of supplements.</p>
+        <a href="/optin-page.html" class="cat-hero-cta">Get the Free Guide →</a>
+      </div>
+      <div class="cat-hero-visual">
+        <img src="/images/energy-metabolism-hero.jpg" alt="Woman in her 50s dancing energetically in an outdoor fitness class" />
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="intro-text"><strong>Low energy after 40 has specific biological causes — it isn't just "getting older."</strong> Mitochondria produce less energy, hormones shift, and blood sugar swings get bigger. On top of that, muscle loss quietly lowers your resting metabolic rate — muscle burns more calories at rest than fat, so as it declines, so does your baseline energy. None of this is fixed by another coffee. Below are our most-read articles on what's actually going on, and what to do about it.</p>
+    </div>
+  </section>
+
+  <!-- COMING SOON -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="coming-soon-note reveal">
+        <p><strong>Coming soon:</strong> we're currently testing a red light therapy device for energy and recovery — full review in a few weeks.</p>
+        <a href="/reviews/">Browse our published reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Energy &amp; Metabolism articles</div>
+        <h2 class="section-title">Our most-read energy advice</h2>
+        <p class="section-sub">Research-backed, no fluff — written for what's actually changing in your body after 40.</p>
+      </div>
+      <div class="article-list reveal">
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/energy-crash-after-40.html">Why Your Energy Crashed After 40 (And How to Get It Back)</a></h3>
+            <p>That flat-battery feeling — the one coffee can't quite fix — has specific biological causes. Mitochondria produce less energy, hormones shift, blood sugar swings get bigger. Four targeted changes address the root causes.</p>
+            <p class="article-meta">10 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/energy-crash-after-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/morning-routine-energy-over-40.html">The Over-40 Morning Routine That Actually Boosts Energy All Day</a></h3>
+            <p>Five reordering changes to your existing morning that take no extra time — water before coffee, morning light within 30 minutes, protein-first breakfast, movement before sitting, and delaying caffeine by 90 minutes.</p>
+            <p class="article-meta">14 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/morning-routine-energy-over-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/fix-metabolism-after-40.html">How to Fix Your Metabolism After 40 (Without Going on a Diet)</a></h3>
+            <p>The metabolic slowdown after 40 is real but smaller than people assume — the bigger culprit is muscle loss. The fix isn't a diet, it's building and protecting the muscle you have.</p>
+            <p class="article-meta">17 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/fix-metabolism-after-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/stress-cortisol-over-40.html">Why Stress Hits Differently After 40</a></h3>
+            <p>Cortisol stays elevated longer after a stressful event — recovery is slower. The same workload you'd have shrugged off at 32 can leave you genuinely depleted at 44. Here's what's changed and what moves the needle.</p>
+            <p class="article-meta">19 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/stress-cortisol-over-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/muscle-power-longevity-over-40.html">Your Grip Strength Predicts How Long You'll Live</a></h3>
+            <p>New research confirms grip strength is more predictive than blood pressure for cardiovascular disease and disability. It's not just strength that matters — it's power, and power declines faster with age than strength does.</p>
+            <p class="article-meta">21 Jun 2026 &nbsp;·&nbsp; 5 min read</p>
+          </div>
+          <a href="/blog/muscle-power-longevity-over-40.html" class="article-read">Read →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL BANNER -->
+  <section class="email-banner reveal">
+    <h2>Get the free Over-40 Health Reset Guide</h2>
+    <p>Practical, no-nonsense health advice delivered to your inbox. Join 2,000+ readers.</p>
+    <a href="/optin-page.html" class="btn-white">Get the Free Guide →</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Over 40 Wellness · <a href="/optin-page.html">Free Guide</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
