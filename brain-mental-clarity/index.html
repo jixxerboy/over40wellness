@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain &amp; Mental Clarity After 40 | Over 40 Wellness</title>
+  <meta name="description" content="Honest advice and research on staying sharp and focused after 40 — what actually helps with brain fog and cognitive health." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:       #3B6D11;
+      --green-mid:   #639922;
+      --green-light: #EAF3DE;
+      --green-pale:  #F4FAF0;
+      --text:        #1A1A1A;
+      --text-muted:  #5F6368;
+      --border:      #E0E0E0;
+      --white:       #FFFFFF;
+      --cta:         #3B6D11;
+      --cta-hover:   #27500A;
+      --radius:      10px;
+      --radius-lg:   16px;
+      --amber:       #F59E0B;
+      --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title { font-family: var(--font-serif); font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+
+    /* CATEGORY HERO */
+    .cat-hero { background: linear-gradient(135deg, var(--cream) 0%, var(--green-pale) 100%); padding: 4rem 2rem; overflow: hidden; }
+    .cat-hero-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+    .cat-hero-inner { text-align: left; }
+    .cat-tag { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.1rem; }
+    .cat-hero h1 { font-size: clamp(2rem, 4.2vw, 2.8rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 1rem; }
+    .cat-hero p { font-size: 1.05rem; color: var(--text-muted); max-width: 480px; margin: 0 0 1.75rem; }
+    .cat-hero-cta { display: inline-block; background: var(--cta); color: var(--white); padding: 0.8rem 1.6rem; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
+    .cat-hero-cta:hover { background: var(--cta-hover); }
+    .cat-hero-visual {
+      border-radius: var(--radius-lg);
+      height: 380px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(59,109,17,0.18);
+    }
+    .cat-hero-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 900px) {
+      .cat-hero-grid { grid-template-columns: 1fr; }
+      .cat-hero-inner { text-align: center; }
+      .cat-hero p { margin-left: auto; margin-right: auto; }
+      .cat-hero-visual { height: 240px; order: -1; }
+    }
+
+    /* SECTIONS */
+    .section { padding: 4rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); margin-bottom: 0.5rem; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.3px; margin-bottom: 0.75rem; }
+    .section-sub { color: var(--text-muted); font-size: 1rem; max-width: 620px; }
+    .section-header { margin-bottom: 2.5rem; }
+    .intro-text { max-width: 720px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.75; }
+    .intro-text strong { color: var(--text); }
+
+    /* COMING SOON CALLOUT */
+    .coming-soon-note { background: var(--green-pale); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .coming-soon-note p { font-size: 0.95rem; color: var(--text); max-width: 520px; }
+    .coming-soon-note p strong { color: var(--green); }
+    .coming-soon-note a { flex-shrink: 0; display: inline-block; border: 1.5px solid var(--green); color: var(--green); padding: 0.6rem 1.2rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600; transition: background 0.2s, color 0.2s; }
+    .coming-soon-note a:hover { background: var(--green); color: var(--white); }
+
+    /* ARTICLE LIST */
+    .article-list { display: flex; flex-direction: column; gap: 1rem; }
+    .article-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1.75rem; transition: box-shadow 0.2s, transform 0.2s; }
+    .article-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .article-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .article-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; max-width: 620px; }
+    .article-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.6rem; }
+    .article-read { flex-shrink: 0; font-size: 0.85rem; font-weight: 600; color: var(--green); white-space: nowrap; }
+    .article-read:hover { text-decoration: underline; }
+
+    /* EMAIL BANNER */
+    .email-banner { background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%); padding: 3.5rem 2rem; text-align: center; color: var(--white); }
+    .email-banner h2 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem; font-family: var(--font-serif); }
+    .email-banner p { font-size: 1rem; opacity: 0.85; margin-bottom: 1.5rem; }
+    .btn-white { display: inline-block; background: var(--white); color: var(--green); padding: 0.75rem 1.4rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 700; transition: opacity 0.2s; }
+    .btn-white:hover { opacity: 0.92; }
+
+    /* FOOTER */
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+    @media (max-width: 700px) {
+      .section { padding: 2.5rem 1.25rem; }
+      .article-item { flex-direction: column; gap: 0.75rem; }
+      .coming-soon-note { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <section class="cat-hero">
+    <div class="cat-hero-grid">
+      <div class="cat-hero-inner">
+        <div class="cat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><path d="M9 4.5c-1.7 0-3 1.3-3 3 0 .4.1.8.2 1.1C4.9 9 4 10.3 4 11.8c0 1.3.7 2.5 1.8 3.1-.1.3-.2.7-.2 1.1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4V4.9c-.3-.2-.7-.4-1-.4z"/><path d="M15 4.5c1.7 0 3 1.3 3 3 0 .4-.1.8-.2 1.1 1.3.4 2.2 1.7 2.2 3.2 0 1.3-.7 2.5-1.8 3.1.1.3.2.7.2 1.1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4V4.9c.3-.2.7-.4 1-.4z"/><path d="M12 4.5v14"/></svg>One of Our 4 Core Pillars</div>
+        <h1>Brain &amp; Mental Clarity</h1>
+        <p>Brain fog, slower recall, losing your train of thought mid-sentence — after 40 these have specific, mostly addressable causes. Here's the honest research on what's actually happening, and what helps.</p>
+        <a href="/optin-page.html" class="cat-hero-cta">Get the Free Guide →</a>
+      </div>
+      <div class="cat-hero-visual">
+        <img src="/images/brain-mental-clarity-hero.jpg" alt="Woman in her 40s focused and reading at a desk" />
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="intro-text"><strong>Neuroplasticity doesn't stop at 40 — it slows, but doesn't stop.</strong> Poor sleep, hormonal changes, blood sugar swings, and nutritional deficiencies are the biggest drivers of brain fog after 40, and most of them are addressable. The gut-brain axis plays a bigger role than most people realise too — 90% of your serotonin is made in your gut, not your brain. The difference between people who stay sharp into their 60s and those who don't comes down largely to daily habits, not genetics or luck. Below are our most-read articles on what's actually going on, and what to do about it.</p>
+    </div>
+  </section>
+
+  <!-- COMING SOON -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="coming-soon-note reveal">
+        <p><strong>Coming soon:</strong> can a daily nootropic sharpen focus, cut brain fog, and support memory in your 40s and beyond? We're testing one of the most talked-about formulas right now.</p>
+        <a href="/reviews/">Browse our published reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="section" style="padding-top: 0;">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-label">Brain &amp; Mental Clarity articles</div>
+        <h2 class="section-title">Our most-read brain health advice</h2>
+        <p class="section-sub">Research-backed, no fluff — written for what's actually changing in your body after 40.</p>
+      </div>
+      <div class="article-list reveal">
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/gut-health-over-40.html">Your Gut Is Ageing — And It's Affecting Everything Else</a></h3>
+            <p>After 40, gut microbial diversity declines and inflammatory species fill the gap. The gut-brain axis is bidirectional — what's happening in your gut directly drives brain fog, and 90% of your serotonin is made there, not your brain.</p>
+            <p class="article-meta">20 Jun 2026 &nbsp;·&nbsp; 5 min read</p>
+          </div>
+          <a href="/blog/gut-health-over-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/brain-sharp-habits-over-40.html">7 Daily Habits That Keep Your Brain Sharp After 40</a></h3>
+            <p>Neuroplasticity doesn't stop at 40 — it slows, but doesn't stop. Seven habits backed by solid evidence, realistic enough to actually do, with effects that compound meaningfully over years.</p>
+            <p class="article-meta">16 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/brain-sharp-habits-over-40.html" class="article-read">Read →</a>
+        </div>
+        <div class="article-item">
+          <div>
+            <h3><a href="/blog/brain-fog-after-40.html">Brain Fog After 40: What's Causing It and How to Clear It</a></h3>
+            <p>Forgetting why you walked into a room, losing your train of thought — brain fog has specific causes, most of which are addressable: poor sleep, hormonal changes, blood sugar swings, nutritional deficiencies.</p>
+            <p class="article-meta">12 Jun 2026 &nbsp;·&nbsp; 4 min read</p>
+          </div>
+          <a href="/blog/brain-fog-after-40.html" class="article-read">Read →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL BANNER -->
+  <section class="email-banner reveal">
+    <h2>Get the free Over-40 Health Reset Guide</h2>
+    <p>Practical, no-nonsense health advice delivered to your inbox. Join 2,000+ readers.</p>
+    <a href="/optin-page.html" class="btn-white">Get the Free Guide →</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Over 40 Wellness · <a href="/optin-page.html">Free Guide</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
