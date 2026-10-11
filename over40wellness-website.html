@@ -74,6 +74,18 @@
     }
     .nav-cta:hover { background: var(--cta-hover) !important; color: var(--white) !important; }
 
+    /* ── PILLARS DROPDOWN ── */
+    .nav-links li.dropdown { position: relative; }
+    .dropdown-trigger { display: flex; align-items: center; gap: 0.3rem; background: none; border: none; cursor: pointer; font: inherit; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 0; transition: color 0.2s; }
+    .dropdown-trigger:hover, .dropdown:focus-within .dropdown-trigger { color: var(--green); }
+    .dropdown-trigger .caret { transition: transform 0.2s; }
+    .dropdown:hover .dropdown-trigger .caret, .dropdown:focus-within .dropdown-trigger .caret { transform: rotate(180deg); }
+    .dropdown-menu { list-style: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 16px 40px rgba(0,0,0,0.12); padding: 0.4rem; min-width: 190px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.15s ease, transform 0.15s ease; z-index: 200; }
+    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu li + li { margin-top: 2px; }
+    .dropdown-menu a { display: block; padding: 0.55rem 0.7rem; border-radius: 6px; font-size: 0.86rem; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+    .dropdown-menu a:hover { background: var(--green-light); color: var(--green); }
+
     /* ── HAMBURGER ── */
     .hamburger {
       display: none;
@@ -369,8 +381,15 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Reviews</a></li>
         <li><a href="#">Blog</a></li>
-        <li><a href="/sleep-recovery/">Sleep &amp; Recovery</a></li>
-        <li><a href="/energy-metabolism/">Energy</a></li>
+        <li class="dropdown">
+          <button class="dropdown-trigger">Pillars <svg class="caret" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="dropdown-menu">
+            <li><a href="/sleep-recovery/">Sleep &amp; Recovery</a></li>
+            <li><a href="/energy-metabolism/">Energy &amp; Metabolism</a></li>
+            <li><a href="/joint-pain-relief/">Joint &amp; Pain Relief</a></li>
+            <li><a href="/brain-mental-clarity/">Brain &amp; Clarity</a></li>
+          </ul>
+        </li>
         <li><a href="#">About</a></li>
         <li><a href="#newsletter" class="nav-cta">Free Guide</a></li>
       </ul>
