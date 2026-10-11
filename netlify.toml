@@ -5,3 +5,36 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+# ── Affiliate short links ──
+# over40wellness.com/go/... forwards to the ClickBank hoplink.
+# To change where a link goes, edit the "to" line here only. Links are listed in
+# products/sleep-revive/Affiliate links.md. 302 = temporary, so browsers don't cache it forever.
+
+# Sleep Revive — website review (seller's text page)
+[[redirects]]
+  from = "/go/sleep-revive"
+  to = "https://cb135axo80txpqdkm7ujw4we8u.hop.clickbank.net/?tid=blog&w=transcript"
+  status = 302
+  force = true
+
+# Sleep Revive — TikTok (seller's video page)
+[[redirects]]
+  from = "/go/sleep-revive-tiktok"
+  to = "https://635d25op9859vv2e0cpe5d85-t.hop.clickbank.net/?tid=tictok"
+  status = 302
+  force = true
+
+# Sleep Revive — YouTube (seller's video page)
+[[redirects]]
+  from = "/go/sleep-revive-youtube"
+  to = "https://c30786ss465wyt7kq5ub090h1g.hop.clickbank.net/?tid=youtube"
+  status = 302
+  force = true
+
+# Sleep Revive — Facebook (seller's video page)
+[[redirects]]
+  from = "/go/sleep-revive-facebook"
+  to = "https://2c35aavp0zt62q5pv4t9193gao.hop.clickbank.net/?tid=Faceb"
+  status = 302
+  force = true

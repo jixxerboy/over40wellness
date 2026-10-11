@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Revive Review: A Melatonin-Free Sleep Aid for Over-40s? | Over 40 Wellness</title>
+  <meta name="description" content="An honest Sleep Revive review for the over-40s: what's in it, what the research says, the real price in the US and UK, and the returns small print." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green:       #3B6D11;
+      --green-mid:   #639922;
+      --green-light: #EAF3DE;
+      --green-pale:  #F4FAF0;
+      --text:        #1A1A1A;
+      --text-muted:  #5F6368;
+      --border:      #E0E0E0;
+      --white:       #FFFFFF;
+      --cta:         #3B6D11;
+      --cta-hover:   #27500A;
+      --radius:      10px;
+      --cream: #F6EFE3; --font-serif: 'Lora', Georgia, serif;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+
+    /* ── PILLARS DROPDOWN ── */
+    .nav-links li.dropdown { position: relative; }
+    .dropdown-trigger { display: flex; align-items: center; gap: 0.3rem; background: none; border: none; cursor: pointer; font: inherit; font-size: 0.9rem; font-weight: 500; color: var(--text-muted); padding: 0; transition: color 0.2s; }
+    .dropdown-trigger:hover, .dropdown:focus-within .dropdown-trigger { color: var(--green); }
+    .dropdown-trigger .caret { transition: transform 0.2s; }
+    .dropdown:hover .dropdown-trigger .caret, .dropdown:focus-within .dropdown-trigger .caret { transform: rotate(180deg); }
+    .dropdown-menu { list-style: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 16px 40px rgba(0,0,0,0.12); padding: 0.4rem; min-width: 190px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.15s ease, transform 0.15s ease; z-index: 200; }
+    .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu li + li { margin-top: 2px; }
+    .dropdown-menu a { display: block; padding: 0.55rem 0.7rem; border-radius: 6px; font-size: 0.86rem; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+    .dropdown-menu a:hover { background: var(--green-light); color: var(--green); }
+
+    /* HERO */
+    .review-hero { background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 100%); padding: 3.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .review-hero-grid { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .review-hero-inner { text-align: left; }
+    .hero-visual { position: relative; }
+    .hero-bottle { position: absolute; left: 3%; bottom: -5%; height: 46%; width: auto; filter: drop-shadow(0 14px 18px rgba(0,0,0,0.28)); }
+    .hero-img { width: 100%; height: 400px; object-fit: cover; object-position: 80% center; border-radius: 14px; box-shadow: 0 24px 60px rgba(59,109,17,0.16); display: block; }
+    .ing-img { width: 100%; height: 230px; object-fit: cover; border-radius: var(--radius); margin: 0.4rem 0 1rem; display: block; }
+    @media (max-width: 900px) {
+      .review-hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .review-hero-inner { text-align: center; }
+      .hero-img { height: 260px; }
+      .hero-visual { order: -1; margin-bottom: 0.5rem; }
+      .hero-bottle { height: 64%; bottom: -8%; }
+    }
+    .post-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.28rem 0.85rem; border-radius: 20px; margin-bottom: 1rem; }
+    .review-hero h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.4px; margin-bottom: 1rem; }
+    .hero-meta { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+    .ad-label { display: inline-block; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); margin-bottom: 0.7rem; letter-spacing: 0.02em; }
+    .hero-cta-btn { display: inline-block; background: var(--cta); color: var(--white); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; transition: background 0.2s; }
+    .hero-cta-btn:hover { background: var(--cta-hover); }
+    .cta-small { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+    /* BODY */
+    .review-body { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .review-body p { margin-bottom: 1.4rem; }
+    .review-body h2 { font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 0.8rem; color: var(--text); letter-spacing: -0.3px; }
+    .review-body h3 { font-size: 1.1rem; font-weight: 600; margin: 1.8rem 0 0.6rem; }
+    .review-body ul, .review-body ol { margin: 0 0 1.4rem 1.5rem; }
+    .review-body li { margin-bottom: 0.6rem; }
+    .review-body p a, .review-body li a { color: var(--green); text-decoration: underline; }
+    .back-link { display: inline-block; margin-bottom: 2.5rem; color: var(--green); font-size: 0.9rem; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+
+    /* QUICK FACTS */
+    .facts { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.93rem; }
+    .facts th, .facts td { text-align: left; padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .facts th { width: 38%; color: var(--text-muted); font-weight: 600; background: var(--green-pale); }
+
+    /* NOTES */
+    .research-note { background: var(--green-pale); border-left: 4px solid var(--green-mid); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1.8rem 0; font-size: 0.93rem; }
+    .research-note strong.label { display: block; margin-bottom: 0.4rem; color: var(--green); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    /* TODO before go-live: replace .product-placeholder boxes with <img src="/images/sleep-revive/product.jpg"> once Critical Bench sends an approved bottle image */
+    .product-placeholder { border: 2px dashed #D97706; background: #FFF8EB; color: #B45309; border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 0.85rem; font-weight: 600; padding: 1rem; }
+    .product-placeholder.large { height: 260px; margin: 1.5rem 0 0.5rem; }
+    .product-placeholder.small { height: 160px; max-width: 220px; margin: 0 auto 1.2rem; }
+    html { scroll-behavior: smooth; }
+    [id] { scroll-margin-top: 84px; }
+    .qa-box { background: var(--green-pale); border-radius: 12px; padding: 1.4rem 1.6rem; margin: 2rem 0; }
+    .qa-box h2 { margin: 0 0 0.3rem !important; font-size: 1.2rem !important; }
+    .qa-box .qa-sub { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.9rem !important; }
+    .qa-list { list-style: none; margin: 0 !important; padding: 0; }
+    .qa-list li { margin: 0 !important; border-top: 1px solid var(--border); }
+    .qa-list li:first-child { border-top: none; }
+    .qa-list a { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0.2rem; font-size: 0.95rem; font-weight: 500; color: var(--text) !important; text-decoration: none !important; }
+    .qa-list a:hover { color: var(--green) !important; }
+    .qa-list a::after { content: "→"; color: var(--green); flex-shrink: 0; }
+    .product-shot { display: block; margin: 1.2rem auto 1rem; max-height: 340px; width: auto; max-width: 100%; mix-blend-mode: multiply; }
+    .product-shot.small { max-height: 190px; margin: 0 auto 1rem; }
+    .trust-box { border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin: 2rem 0; background: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .trust-box h2 { margin: 0 0 1rem !important; font-size: 1.2rem !important; }
+    .trust-list { list-style: none; margin: 0 !important; padding: 0; }
+    .trust-list li { display: flex; gap: 0.75rem; margin-bottom: 0.9rem !important; font-size: 0.95rem; }
+    .trust-list li:last-child { margin-bottom: 0 !important; }
+    .trust-list .tick { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--green-light); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; margin-top: 0.15rem; }
+    .safety-note { background: #FFF8EB; border-left: 4px solid #D97706; border-radius: var(--radius); padding: 1.2rem 1.5rem; margin: 1.8rem 0; font-size: 0.93rem; }
+    .safety-note strong.label { display: block; margin-bottom: 0.4rem; color: #B45309; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* PROS / CONS */
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+    .pros, .cons { background: var(--green-pale); border-radius: var(--radius); padding: 1.2rem 1.4rem; }
+    .pros h3, .cons h3 { font-size: 0.95rem; font-weight: 700; margin: 0 0 0.8rem; }
+    .pros h3 { color: var(--green); }
+    .cons h3 { color: #B91C1C; }
+    .pros ul, .cons ul { margin: 0; padding-left: 1.2rem; }
+    .pros li::marker { color: var(--green); }
+    .cons li::marker { color: #B91C1C; }
+
+    /* CTA */
+    .cta-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 1.4rem 1.6rem; margin: 2.5rem 0; }
+    .cta-box p { margin: 0 0 1rem; font-weight: 500; }
+    .cta-box a { display: inline-block; background: var(--cta); color: var(--white); padding: 0.65rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+    .cta-box a:hover { background: var(--cta-hover); }
+    .buy-box { background: var(--green-pale); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+    .buy-box h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; }
+    .buy-box p { color: var(--text-muted); margin-bottom: 1.4rem; font-size: 0.95rem; }
+    .buy-btn { display: inline-block; background: var(--cta); color: var(--white) !important; text-decoration: none !important; padding: 1rem 2.4rem; border-radius: 8px; font-weight: 700; font-size: 1.05rem; transition: background 0.2s; }
+    .buy-btn:hover { background: var(--cta-hover); }
+
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    .disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .ing-img { height: 180px; }
+      .nav-links { display: none; }
+      .review-hero { padding: 2.5rem 1rem; }
+      .review-body { padding: 2rem 1rem 3rem; }
+      .pros-cons { grid-template-columns: 1fr; }
+      .facts th { width: 42%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/reviews/" class="active">Reviews</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li class="dropdown">
+          <button class="dropdown-trigger">Pillars <svg class="caret" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <ul class="dropdown-menu">
+            <li><a href="/sleep-recovery/">Sleep &amp; Recovery</a></li>
+            <li><a href="/energy-metabolism/">Energy &amp; Metabolism</a></li>
+            <li><a href="/joint-pain-relief/">Joint &amp; Pain Relief</a></li>
+            <li><a href="/brain-mental-clarity/">Brain &amp; Clarity</a></li>
+          </ul>
+        </li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="review-hero">
+    <div class="review-hero-grid">
+    <div class="review-hero-inner">
+      <span class="post-tag">Sleep &amp; Recovery · Product Review</span>
+      <h1>Sleep Revive Review: A Melatonin-Free Sleep Aid for Over-40s?</h1>
+      <p class="hero-meta">By Simon, Over 40 Wellness &nbsp;·&nbsp; 11 October 2026 &nbsp;·&nbsp; 6 min read</p>
+      <span class="ad-label">#ad · affiliate link</span><br>
+      <a href="/go/sleep-revive" class="hero-cta-btn" rel="sponsored nofollow noopener" target="_blank">See the official Sleep Revive page →</a>
+      <span class="cta-small">Opens the maker's site. We may earn a commission if you buy.<br>Heads up: their page is long. Prices and packages are about halfway down.</span>
+    </div>
+    <div class="hero-visual">
+      <img src="/images/sleep-revive/hero.jpg" alt="A woman in her fifties sleeping peacefully in morning light" class="hero-img" />
+      <!-- TODO BEFORE GO-LIVE: bottle image awaiting Critical Bench approval -->
+      <img src="/images/sleep-revive/product-cutout.png" alt="Sleep Revive bottle by Critical Nutrition Labs" class="hero-bottle" />
+    </div>
+    </div>
+  </section>
+
+  <article class="review-body">
+    <a href="/reviews/" class="back-link">← Back to Reviews</a>
+
+    <p>If you're over 40 and you've started waking at 3am, lying there while your mind runs through tomorrow's to-do list, you're not alone. Sleep changes as we get older. We tend to sleep more lightly, wake more often and find it harder to drop back off. So it's no surprise that sleep supplements are everywhere.</p>
+
+    <p><strong>Sleep Revive</strong> is one of the newer ones, and it stands out for one reason: <strong>it contains no melatonin</strong>. Instead it combines five plant and nutrient ingredients. In this review I'll go through what's in it, what the research actually says, what it costs in the US and UK, and the small print on the guarantee, so you can decide whether it's worth trying.</p>
+
+    <div class="qa-box" role="navigation" aria-label="Questions this review answers">
+      <h2>Your Questions, Answered</h2>
+      <p class="qa-sub">Tap a question to jump straight to the answer.</p>
+      <ul class="qa-list">
+        <li><a href="#who">Is this a real company, or snake oil?</a></li>
+        <li><a href="#ingredients">What's actually in it, and does the research back it up?</a></li>
+        <li><a href="#why-combo">Why these five ingredients together?</a></li>
+        <li><a href="#separately">Why not just buy the ingredients separately?</a></li>
+        <li><a href="#melatonin">Why choose a melatonin-free sleep aid?</a></li>
+        <li><a href="#safety">Is it safe if I take medication?</a></li>
+        <li><a href="#price">How much does it cost in the US and UK, and can I get a refund?</a></li>
+        <li><a href="#suits">Is it right for me?</a></li>
+        <li><a href="#pros-cons">What are the downsides?</a></li>
+        <li><a href="#verdict">So, is it worth trying?</a></li>
+      </ul>
+    </div>
+
+    <div class="trust-box" id="who">
+      <h2>Who's Behind Sleep Revive?</h2>
+      <p style="font-size:0.95rem;">Fair question. There's a lot of snake oil in the supplement world, so before looking at any product I check who's selling it and how they treat customers. Here's what I found.</p>
+      <ul class="trust-list">
+        <li><span class="tick">✓</span><span><strong>An established company, not a pop-up brand.</strong> Sleep Revive is made by Critical Nutrition Labs, part of Critical Bench, Inc., a Florida company that has sold health and fitness programmes online for many years.</span></li>
+        <li><span class="tick">✓</span><span><strong>A+ rating from the Better Business Bureau (BBB).</strong> The BBB is a long-running US non-profit that grades companies on how they deal with customers, from A+ (best) down to F. Critical Bench has the top grade, with just one customer complaint in the last three years, and it was sorted out with a free replacement.</span></li>
+        <li><span class="tick">✓</span><span><strong>You don't pay the seller directly.</strong> Payment goes through ClickBank, a large US online retailer that has handled payments and refunds for digital and health products since 1998.</span></li>
+        <li><span class="tick">✓</span><span><strong>Made in a GMP-certified facility in the USA.</strong> GMP (Good Manufacturing Practice) means the factory follows recognised quality and hygiene standards for making supplements.</span></li>
+        <li><span class="tick">✓</span><span><strong>60-day money-back guarantee</strong>, with some small print that I explain below.</span></li>
+      </ul>
+    </div>
+
+    <div class="research-note">
+      <strong class="label">How this review was put together</strong>
+      I haven't taken Sleep Revive myself yet. This review is based on the maker's own information, the published research on each ingredient, and the real checkout prices and returns policy. If I try it, I'll update this page with how I got on.
+    </div>
+
+    <h2>Sleep Revive at a Glance</h2>
+    <table class="facts">
+      <tr><th>What it is</th><td>A night-time capsule, 2 capsules 30–45 minutes before bed</td></tr>
+      <tr><th>Melatonin?</th><td>No</td></tr>
+      <tr><th>Key ingredients</th><td>Valerian root, lemon balm, L-theanine, magnesium glycinate, rutaecarpine</td></tr>
+      <tr><th>Made by</th><td>Critical Nutrition Labs (Critical Bench, Inc., Florida). Made in a GMP-certified facility in the USA</td></tr>
+      <tr><th>Per bottle</th><td>60 vegetarian capsules (a 30-day supply)</td></tr>
+      <tr><th>Price (US)</th><td>$59 for 1 bottle + $7.99 shipping · $49/bottle for 3 · $39/bottle for 6 (free shipping on 3 or 6)</td></tr>
+      <tr><th>Price (UK)</th><td>About £70 for 1 bottle including shipping and VAT (checked October 2026)</td></tr>
+      <tr><th>Ships to</th><td>US, UK, Canada, Australia, Ireland, New Zealand</td></tr>
+      <tr><th>Guarantee</th><td>60 days. You post the bottles back to get a refund (see below)</td></tr>
+      <tr><th>Where to buy</th><td>Only from the official website</td></tr>
+    </table>
+
+    <h2 id="ingredients">What's Inside, and What the Research Says</h2>
+    <!-- TODO DOSES: once Critical Bench sends the supplement facts, add the amount of each ingredient here and update 'doses aren't published' wording in 'Why These Five Together?', the quick-facts table and the cons list -->
+    <p>The maker doesn't list the exact amount of each ingredient on the sales page, which makes it harder to compare with the doses used in studies. Here's what's known about each one.</p>
+
+    <h3>Valerian root</h3>
+    <img src="/images/sleep-revive/valerian.jpg" alt="Valerian flowers (Valeriana officinalis) with a bee" class="ing-img" loading="lazy" />
+    <p>Valerian is one of the oldest herbal sleep remedies, used since ancient Greece. Research is mixed: some studies and reviews suggest it may help people fall asleep and improve how well they rate their sleep, while others find little difference from a placebo. It tends to work gently and gradually rather than like a sleeping pill.</p>
+
+    <h3>Lemon balm</h3>
+    <img src="/images/sleep-revive/lemon-balm.jpg" alt="Fresh lemon balm leaves and herbal tea" class="ing-img" loading="lazy" />
+    <p>A member of the mint family, traditionally used for calm and relaxation. Small studies, often combining lemon balm with valerian, suggest it may help with restlessness and sleep quality. The evidence is encouraging but limited.</p>
+
+    <h3>L-theanine</h3>
+    <img src="/images/sleep-revive/l-theanine.jpg" alt="Green tea and loose tea leaves, the natural source of L-theanine" class="ing-img" loading="lazy" />
+    <p>An amino acid found in green tea. It's best known for supporting a calm-but-alert state, and several small studies suggest it may help people relax and improve sleep quality. It doesn't make you drowsy in the way a sedative does.</p>
+
+    <h3>Magnesium glycinate</h3>
+    <img src="/images/sleep-revive/magnesium.jpg" alt="Magnesium-rich foods: pumpkin seeds, almonds and pecans" class="ing-img" loading="lazy" />
+    <p>Magnesium plays a part in muscle relaxation and the nervous system, and many adults don't get enough from their diet. A study in older adults with insomnia found magnesium improved some sleep measures. The glycinate form is generally gentle on the stomach. If you already eat plenty of leafy greens, nuts and seeds, you may notice less of a difference.</p>
+
+    <h3>Rutaecarpine</h3>
+    <img src="/images/sleep-revive/rutaecarpine.jpg" alt="Dried evodia berries, the source of rutaecarpine, with an espresso behind" class="ing-img" loading="lazy" />
+    <p>This is the unusual one. It's a compound from a plant used in traditional Chinese medicine, and it's in the formula because lab and animal studies suggest it may speed up how quickly the body clears caffeine. That's where the "even if you had a few extra coffees" angle comes from. But the human research is very thin, so I'd treat it as a bonus rather than a reason to buy.</p>
+
+    <h2 id="why-combo">Why These Five Together?</h2>
+    <p>This is the question I'd ask first. Poor sleep after 40 usually isn't one problem. It's a mix of a busy mind, a body that won't relax, and sometimes that afternoon coffee. The formula seems built to tackle each of those from a different angle:</p>
+    <table class="facts">
+      <tr><th>The problem</th><td><strong>What's aimed at it</strong></td></tr>
+      <tr><th>"I can't switch my mind off"</th><td><strong>L-theanine</strong>, which supports a calm, settled state of mind without making you drowsy</td></tr>
+      <tr><th>"I can't wind down and drift off"</th><td><strong>Valerian + lemon balm</strong>, a classic herbal pairing. Both are thought to work on GABA, the brain's natural "slow down" signal, and they've often been studied together</td></tr>
+      <tr><th>"My body feels tense and restless"</th><td><strong>Magnesium glycinate</strong>. Magnesium helps muscles and nerves relax, and glycine (the "glycinate" part) has its own small studies linked to better sleep quality</td></tr>
+      <tr><th>"I had a coffee after lunch"</th><td><strong>Rutaecarpine</strong>, included because early lab research suggests it may help the body clear caffeine faster</td></tr>
+    </table>
+    <p>Put simply, it's a "mind, body and caffeine" approach, and the ingredients are all gentle, so they're designed to work alongside each other rather than knock you out. <strong>Bear in mind</strong> that, as far as I can find, this exact combination hasn't been tested in its own clinical trial, and the doses aren't published. So the logic makes sense on paper, but the proof is in how you sleep.</p>
+
+    <h2 id="separately">Why Not Just Take Them Separately?</h2>
+    <p>You could, and some people do. But in a busy life, there are a few good reasons why an all-in-one makes sense:</p>
+    <ul>
+      <li><strong>You can't easily get them from food.</strong> Valerian, lemon balm and rutaecarpine aren't in everyday meals at all. Green tea does contain L-theanine, but you'd need several cups, and the caffeine in it works against sleep.</li>
+      <li><strong>Magnesium is easy to fall short on.</strong> It's found in leafy greens, nuts, seeds and wholegrains, but with rushed meals and processed food many of us don't get enough.</li>
+      <li><strong>One bottle instead of five.</strong> Buying five separate supplements means five bottles, five sets of doses to work out, and a handful of pills every night. Two capsules before bed is much easier to stick to, and sticking to it is what matters.</li>
+      <li><strong>Rutaecarpine is hard to find on its own</strong>, and many people wouldn't know where to start.</li>
+    </ul>
+    <p>To be fair, buying some of these separately (magnesium and L-theanine, for example) can work out cheaper, and you'd know exactly how much you're taking. Sleep Revive's appeal is <strong>convenience</strong>: a sensible combination in one simple nightly habit. It works best <em>alongside</em> good food and good sleep habits, not instead of them.</p>
+
+    <h2 id="melatonin">Why "Melatonin-Free" Appeals After 40</h2>
+    <p>Melatonin is a hormone, and in the UK it's a prescription-only medicine. In the US it's sold freely over the counter. Some people find it leaves them groggy the next morning, and others simply prefer not to take a hormone every night. Sleep Revive's ingredients are designed to help you <em>wind down</em> rather than knock you out, which many people say suits them better. It isn't a quick fix, though. The maker says most people notice a difference after a few nights of regular use.</p>
+
+    <div class="safety-note" id="safety">
+      <strong class="label">Check with your doctor first</strong>
+      Valerian and lemon balm can add to the effect of sedatives, sleeping tablets, some antidepressants and alcohol. Talk to your doctor or pharmacist before trying Sleep Revive if you take any regular medication, are pregnant or breastfeeding, have a liver condition, or have surgery coming up. And if you're snoring heavily, waking up gasping or exhausted every day, or have struggled with sleep for months, see your GP first. That can be a sign of something like sleep apnoea, which a supplement won't fix.
+    </div>
+
+    <h2 id="price">Price and the Guarantee Small Print</h2>
+    <p>One bottle lasts a month. In the US it's $59 plus $7.99 shipping, and the price per bottle drops to $39 if you buy six. In the UK, a single bottle came to about <strong>£70</strong> at checkout once shipping and VAT were added, so it's not a cheap experiment.</p>
+    <p>There's a <strong>60-day money-back guarantee</strong>, but read how it works. The sales page makes it sound like a quick email, but the returns policy says you need to <strong>post the bottle(s) back to the US warehouse</strong>, with the original packing slip, <strong>at your own cost</strong>, so that they arrive within 60 days. Then you request the refund through ClickBank, the company that handles the payment. From the UK, the return postage could eat into your refund.</p>
+    <p><strong>My suggestion:</strong> start with one bottle rather than the six-bottle deal. That way you can see if it suits you before spending more, and keep the box and packing slip in case you want to return it.</p>
+
+    <h2 id="suits">Who It Might Suit, and Who Should Skip It</h2>
+    <h3>Might suit you if…</h3>
+    <ul>
+      <li>You find it hard to switch off at bedtime, or wake in the night and struggle to settle again</li>
+      <li>You'd rather avoid melatonin</li>
+      <li>You've already sorted the basics (regular bedtime, less late caffeine and alcohol, a cool, dark room) and want a gentle extra nudge</li>
+    </ul>
+    <h3>Probably skip it if…</h3>
+    <ul>
+      <li>You take sedatives, sleeping tablets or certain antidepressants (unless your doctor says it's fine)</li>
+      <li>You're pregnant or breastfeeding</li>
+      <li>You suspect sleep apnoea or have long-term insomnia. See your GP first</li>
+      <li>You want to know exactly how much of each ingredient you're taking</li>
+    </ul>
+
+    <h2 id="pros-cons">Pros and Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✓ Pros</h3>
+        <ul>
+          <li>Melatonin-free</li>
+          <li>Four of its five ingredients have a long history of use for relaxation and sleep</li>
+          <li>Non-habit-forming ingredients</li>
+          <li>Made in a GMP-certified US facility</li>
+          <li>Established seller with a top customer-service rating (A+ from the Better Business Bureau)</li>
+          <li>Ships to the UK, Canada, Australia, Ireland and NZ</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>✗ Cons</h3>
+        <ul>
+          <li>Ingredient amounts aren't shown on the sales page</li>
+          <li>Pricey, especially in the UK (about £70 a bottle)</li>
+          <li>Refunds mean posting bottles back to the US at your cost</li>
+          <li>Hardly any independent customer reviews yet</li>
+          <li>Only sold through its own website</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="verdict">My Verdict</h2>
+    <p>Sleep Revive is a reasonable option if you want a <strong>melatonin-free</strong> night-time supplement built on ingredients with a long track record for relaxation: valerian, lemon balm, L-theanine and magnesium. The company behind it has a solid track record with customers, and the 60-day guarantee gives you a safety net, even if the returns process is more effort than the sales page suggests.</p>
+    <p>Don't expect miracles. Think of it as one helpful piece of the puzzle alongside the habits that make the biggest difference after 40. If you're curious, try one bottle for a month, keep a simple sleep diary, and judge it on how you actually feel.</p>
+
+    <div class="buy-box">
+      <!-- TODO BEFORE GO-LIVE: bottle image awaiting Critical Bench approval (see note above) -->
+      <img src="/images/sleep-revive/product.jpg" alt="Sleep Revive bottle" class="product-shot small" />
+      <h3>Want to take a closer look?</h3>
+      <p>See the current price for your country, the full ingredient story and the guarantee on the official Sleep Revive website.</p>
+      <a href="/go/sleep-revive" class="buy-btn" rel="sponsored nofollow noopener" target="_blank">Visit the official Sleep Revive page →</a>
+      <p style="margin:0.8rem 0 0; font-size:0.85rem; color:var(--text-muted);"><strong>Heads up:</strong> their page is long. If you've already read this review, just scroll down to the three packages. The 1-bottle option is the "Starter".</p>
+      <p style="margin:0.5rem 0 0; font-size:0.8rem;">#ad · affiliate link</p>
+    </div>
+
+    <h2>More on Sleep After 40</h2>
+    <ul>
+      <li><a href="/blog/why-you-cant-sleep-after-40.html">Why you can't sleep after 40, and what actually helps</a></li>
+      <li><a href="/blog/wake-up-3am-after-40.html">Why you wake up at 3am and can't get back to sleep</a></li>
+      <li><a href="/blog/sleep-biological-age-brain.html">New research: poor sleep makes your brain age faster</a></li>
+    </ul>
+
+    <div class="cta-box">
+      <p>Want a simple plan to reset your sleep and energy after 40?</p>
+      <a href="/optin-page.html">Get the Free Guide →</a>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Disclosure:</strong> This page contains affiliate links (#ad). If you buy through them, Over 40 Wellness may earn a commission at no extra cost to you. Sleep Revive is sold by Critical Bench, Inc. through ClickBank, and this is an independent review, not the official site.<br><br>
+      <strong>Health note:</strong> This article is for general information only and isn't medical advice. Supplements aren't intended to diagnose, treat, cure or prevent any disease. Always speak to your doctor or pharmacist before starting a new supplement, especially if you take medication or have a health condition.
+    </p>
+
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Over 40 Wellness. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
