@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – Over 40 Wellness</title>
+  <meta name="description" content="How Over 40 Wellness collects, uses and protects your personal information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green: #3B6D11; --green-mid: #639922; --green-light: #EAF3DE; --green-pale: #F4FAF0; --text: #1A1A1A; --text-muted: #5F6368; --border: #E0E0E0; --white: #FFFFFF; --cta: #3B6D11; --cta-hover: #27500A; --radius: 10px;  --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title, .featured-content h2, .email-banner h2, .card h2 { font-family: var(--font-serif); font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+    .post-hero { background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 100%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+    .post-hero-inner { max-width: 720px; margin: 0 auto; }
+    .post-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.28rem 0.85rem; border-radius: 20px; margin-bottom: 1rem; }
+    .post-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 0.9rem; }
+    .post-meta { font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; }
+    .post-body { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .post-body p { margin-bottom: 1.4rem; }
+    .post-body h2 { font-size: 1.35rem; font-weight: 700; margin: 2.2rem 0 0.8rem; color: var(--text); }
+    .post-body ul, .post-body ol { margin: 0 0 1.4rem 1.5rem; }
+    .post-body li { margin-bottom: 0.5rem; }
+    .post-body strong { color: var(--text); }
+    .cta-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 1.4rem 1.6rem; margin: 2.5rem 0; }
+    .cta-box p { margin: 0 0 1rem; font-weight: 500; }
+    .cta-box a { display: inline-block; background: var(--cta); color: var(--white); padding: 0.65rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; }
+    .cta-box a:hover { background: var(--cta-hover); }
+    .back-link { display: inline-block; margin-bottom: 2.5rem; color: var(--green); font-size: 0.9rem; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    @media (max-width: 600px) { .nav-links { display: none; } .post-body { padding: 2rem 1.2rem 3rem; } }
+  
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+      .post-img { width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius); margin: 0.4rem 0 1.6rem; display: block; }
+    @media (max-width: 600px) { .post-img { height: 210px; } }
+      .post-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 0.5rem; }
+    .post-body table { width: 100%; border-collapse: collapse; margin: 0 0 1.4rem; font-size: 0.92rem; }
+    .post-body th, .post-body td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .post-body th { background: var(--green-pale); }
+    .post-body a { color: var(--green); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="post-hero-inner">
+      <span class="post-tag">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="post-meta">Last updated: 11 October 2026</p>
+    </div>
+  </section>
+
+  <article class="post-body">
+
+    <p>This policy explains what personal information Over 40 Wellness (<strong>over40wellness.com</strong>) collects, why, and what your rights are. In short: we collect very little, we never sell it, and you can ask us to delete it at any time.</p>
+
+    <h2>Who we are</h2>
+    <p>Over 40 Wellness is run by Simon Peel in the United Kingdom. Simon is the "data controller" for the personal information described here. You can contact us about anything in this policy at <a href="mailto:over40wellness1234@gmail.com">over40wellness1234@gmail.com</a>.</p>
+
+    <h2>What we collect and why</h2>
+    <table>
+      <tr><th>What</th><th>When</th><th>Why</th><th>Legal basis</th></tr>
+      <tr><td>Your name and email address</td><td>When you sign up for our free guide</td><td>To send you the guide and occasional emails with health tips and recommendations</td><td>Your consent (you can withdraw it at any time)</td></tr>
+      <tr><td>Technical information such as your IP address, browser type and the pages you visit</td><td>Automatically, when you visit the site</td><td>To deliver the website securely and keep it working</td><td>Our legitimate interests in running a secure website</td></tr>
+      <tr><td>Anything you choose to send us</td><td>If you email us</td><td>To reply to you</td><td>Our legitimate interests in answering your message</td></tr>
+    </table>
+    <p>We don't ask for sensitive health information, and we don't knowingly collect information from anyone under 18.</p>
+
+    <h2>Cookies and tracking</h2>
+    <p>Our website doesn't use its own analytics or advertising cookies. However:</p>
+    <ul>
+      <li><strong>Affiliate links:</strong> when you click a link to a product we review, you may be taken through our affiliate partner (for example ClickBank), which sets a cookie so it can tell that you came from our site. This is how we may earn a commission if you buy. Those cookies are controlled by the partner, not us. Please see their privacy policies.</li>
+      <li><strong>Fonts:</strong> our pages load fonts from Google Fonts, which means Google receives your IP address when the page loads.</li>
+    </ul>
+    <p>You can block or delete cookies in your browser settings at any time.</p>
+
+    <h2>Who we share it with</h2>
+    <p>We <strong>never sell</strong> your personal information. We only share it with the service providers that help us run the site:</p>
+    <ul>
+      <li><strong>Systeme.io</strong> (France): stores email sign-ups and sends our emails.</li>
+      <li><strong>Netlify</strong> (USA): hosts the website and keeps standard server logs.</li>
+      <li><strong>Google</strong> (USA): provides the website fonts.</li>
+      <li><strong>Affiliate networks and sellers</strong> such as ClickBank: only the cookie and click information described above, if you click an affiliate link. We don't pass them your name or email.</li>
+    </ul>
+    <p>Some of these providers are outside the UK. Where that's the case, they protect your information using approved safeguards such as the UK's International Data Transfer Agreement or standard contractual clauses.</p>
+
+    <h2>How long we keep it</h2>
+    <ul>
+      <li><strong>Email sign-ups:</strong> until you unsubscribe or ask us to delete them.</li>
+      <li><strong>Emails you send us:</strong> as long as needed to deal with your message, then deleted.</li>
+      <li><strong>Server logs:</strong> kept for a short period by our hosting provider.</li>
+    </ul>
+
+    <h2>Your rights</h2>
+    <p>Under UK data protection law (UK GDPR) you have the right to:</p>
+    <ul>
+      <li>ask for a copy of the information we hold about you</li>
+      <li>ask us to correct it, or to delete it</li>
+      <li>object to or limit how we use it</li>
+      <li>withdraw your consent at any time, for example by clicking "unsubscribe" in any email we send</li>
+    </ul>
+    <p>To use any of these rights, email <a href="mailto:over40wellness1234@gmail.com">over40wellness1234@gmail.com</a>. We'll reply within one month.</p>
+    <p>If you're unhappy with how we've handled your information, you can complain to the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" rel="noopener" target="_blank">ico.org.uk</a>.</p>
+
+    <h2>Affiliate links</h2>
+    <p>Some links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. Affiliate links are always labelled <strong>#ad · affiliate link</strong>.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy from time to time. The "last updated" date at the top shows when it last changed.</p>
+
+  </article>
+
+  <footer>
+    <p>© 2026 Over 40 Wellness · <a href="/optin-page.html">Free Guide</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
