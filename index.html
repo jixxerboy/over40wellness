@@ -182,8 +182,8 @@
     }
     .btn:hover { background: var(--cta-hover); }
     .opt-in-note { font-size: 0.78rem; color: var(--text-muted); }
-    .hero-trust { display: flex; justify-content: flex-start; gap: 2rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); }
+    .hero-trust { display: flex; justify-content: flex-start; gap: 0.5rem 1.1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; }
     .trust-icon { color: var(--green); display: inline-flex; align-items: center; }
     .hero-visual {
       border-radius: var(--radius-lg);
@@ -370,7 +370,7 @@
     }
     @media (max-width: 480px) {
       .footer-grid { grid-template-columns: 1fr; }
-      .hero-trust { flex-direction: column; gap: 0.75rem; }
+      .hero-trust { gap: 0.4rem 0.9rem; justify-content: center; }
       .hero h1 { font-size: 1.75rem; }
     }
   
@@ -436,8 +436,8 @@
         <p class="opt-in-note" style="display:flex;align-items:center;justify-content:flex-start;gap:0.35rem;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>No spam, ever. Unsubscribe anytime.</p>
         <div class="hero-trust">
           <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Independent reviews</div>
-          <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Affiliate links always disclosed</div>
-          <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Research-based, no hype</div>
+          <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> Affiliate links disclosed</div>
+          <div class="trust-item"><span class="trust-icon"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;display:block;"><polyline points="4 12.5 9.5 18 20 5.5"/></svg></span> No hype</div>
         </div>
       </div>
       <div class="hero-visual">
