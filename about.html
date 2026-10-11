@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Over 40 Wellness</title>
+  <meta name="description" content="About Over 40 Wellness: honest, research-based health advice and product reviews for the over-40s, with affiliate links always disclosed." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --green: #3B6D11; --green-mid: #639922; --green-light: #EAF3DE; --green-pale: #F4FAF0; --text: #1A1A1A; --text-muted: #5F6368; --border: #E0E0E0; --white: #FFFFFF; --cta: #3B6D11; --cta-hover: #27500A; --radius: 10px;  --cream: #F6EFE3; --terracotta: #B8703F; --font-serif: 'Lora', Georgia, serif; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+    h1 { font-family: var(--font-serif); font-weight: 600; }
+    .section-title, .featured-content h2, .email-banner h2, .card h2 { font-family: var(--font-serif); font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.3px; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo img { height: 34px; width: auto; display: block; }
+    .logo-text span { color: var(--text); font-weight: 400; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--cta); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-size: 0.85rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--cta-hover) !important; }
+    .post-hero { background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 100%); padding: 3.5rem 2rem 2.5rem; text-align: center; }
+    .post-hero-inner { max-width: 720px; margin: 0 auto; }
+    .post-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.28rem 0.85rem; border-radius: 20px; margin-bottom: 1rem; }
+    .post-hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 0.9rem; }
+    .post-meta { font-size: 0.88rem; color: var(--text-muted); margin-top: 1rem; }
+    .post-body { max-width: 720px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .post-body p { margin-bottom: 1.4rem; }
+    .post-body h2 { font-size: 1.35rem; font-weight: 700; margin: 2.2rem 0 0.8rem; color: var(--text); }
+    .post-body ul, .post-body ol { margin: 0 0 1.4rem 1.5rem; }
+    .post-body li { margin-bottom: 0.5rem; }
+    .post-body strong { color: var(--text); }
+    .cta-box { background: var(--green-light); border-left: 4px solid var(--green); border-radius: var(--radius); padding: 1.4rem 1.6rem; margin: 2.5rem 0; }
+    .cta-box p { margin: 0 0 1rem; font-weight: 500; }
+    .cta-box a { display: inline-block; background: var(--cta); color: var(--white); padding: 0.65rem 1.4rem; border-radius: 6px; font-weight: 600; font-size: 0.95rem; }
+    .cta-box a:hover { background: var(--cta-hover); }
+    .back-link { display: inline-block; margin-bottom: 2.5rem; color: var(--green); font-size: 0.9rem; font-weight: 500; }
+    .back-link:hover { text-decoration: underline; }
+    footer { background: var(--green-pale); border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+    @media (max-width: 600px) { .nav-links { display: none; } .post-body { padding: 2rem 1.2rem 3rem; } }
+  
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+      .post-img { width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius); margin: 0.4rem 0 1.6rem; display: block; }
+    @media (max-width: 600px) { .post-img { height: 210px; } }
+      .post-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 0.5rem; }
+    .post-body table { width: 100%; border-collapse: collapse; margin: 0 0 1.4rem; font-size: 0.92rem; }
+    .post-body th, .post-body td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .post-body th { background: var(--green-pale); }
+    .post-body a { color: var(--green); text-decoration: underline; }
+    .about-img { width: 100%; max-width: 560px; display: block; margin: 0.4rem auto 1.8rem; border-radius: 14px; box-shadow: 0 16px 40px rgba(59,109,17,0.14); }
+    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0 0 1.6rem; }
+    .pillars a { display: block; background: var(--green-pale); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; text-decoration: none !important; color: var(--text) !important; font-weight: 600; }
+    .pillars a span { display: block; font-weight: 400; font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem; }
+    @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo"><img src="/images/logo.png" alt="Over 40 Wellness" /><span class="logo-text">Over40<span>Wellness</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/optin-page.html" class="nav-cta">Free Guide</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="post-hero">
+    <div class="post-hero-inner">
+      <span class="post-tag">About</span>
+      <h1>About Over 40 Wellness</h1>
+      <p class="post-meta">Honest health advice for real life after 40</p>
+    </div>
+  </section>
+
+  <article class="post-body">
+
+    <img src="/images/about-cartoon.jpg" alt="Over 40 Wellness" class="about-img" />
+
+    <p>Somewhere after 40, things start to change. Sleep gets lighter, energy dips in the afternoon, joints complain more, and remembering where you put your keys becomes a daily puzzle. None of that means you're "past it". It just means your body needs a slightly different approach than it did at 25.</p>
+    <p>Over 40 Wellness is here to help with that, in plain English and without the hype.</p>
+
+    <h2>What You'll Find Here</h2>
+    <p>Everything on the site is organised around the four areas that make the biggest difference to how we feel after 40:</p>
+    <div class="pillars">
+      <a href="/sleep-recovery/">Sleep &amp; Recovery<span>Falling asleep, staying asleep, and waking up refreshed</span></a>
+      <a href="/energy-metabolism/">Energy &amp; Metabolism<span>Steady energy, strength and a healthy weight</span></a>
+      <a href="/joint-pain-relief/">Joint &amp; Pain Relief<span>Stiffness, aches and staying mobile</span></a>
+      <a href="/brain-mental-clarity/">Brain &amp; Clarity<span>Focus, memory and a calmer mind</span></a>
+    </div>
+    <p>You'll find practical <a href="/blog/">articles</a> you can act on straight away, and honest <a href="/reviews/">product reviews</a> for when you're wondering whether something is worth your money.</p>
+
+    <h2>How We Review Products</h2>
+    <ul>
+      <li><strong>We do the research.</strong> We look at what's actually in a product, what the evidence says, who makes it, the real price, and the small print on the guarantee.</li>
+      <li><strong>We're clear about what we know and what we don't.</strong> If we haven't tried something ourselves, we say so. If the evidence is thin, we say that too.</li>
+      <li><strong>We leave out the hype.</strong> No miracle cures, no "doctors hate this", no made-up testimonials. We'd rather you trust us than click on something.</li>
+      <li><strong>We tell you who it's <em>not</em> for.</strong> Every review includes who should skip it and when to speak to your GP first.</li>
+    </ul>
+
+    <h2 id="affiliate-disclosure">How This Site Is Funded</h2>
+    <p>Over 40 Wellness is free to read. Some links on the site are <strong>affiliate links</strong>: if you buy something through one, we may earn a small commission at no extra cost to you. That's how we keep the lights on.</p>
+    <p>Affiliate links are always labelled <strong>#ad · affiliate link</strong>, and earning a commission never changes what we say about a product. If something isn't right for you, we'll tell you.</p>
+
+    <h2>What We're Not</h2>
+    <p>We're not doctors, and nothing on this site is medical advice. Our articles are general information to help you have better conversations with your GP or pharmacist, not to replace them. Always check with a professional before starting a new supplement or exercise plan, especially if you take medication or have a health condition.</p>
+
+    <h2>Get in Touch</h2>
+    <p>Questions, suggestions, or a topic you'd like us to cover? Email <a href="mailto:over40wellness1234@gmail.com">over40wellness1234@gmail.com</a>. We read everything.</p>
+
+    <div class="cta-box">
+      <p>New here? Start with our free guide: a simple plan to reset your sleep, energy and more after 40.</p>
+      <a href="/optin-page.html" style="color: var(--white) !important; text-decoration: none !important;">Get the Free Guide →</a>
+    </div>
+
+  </article>
+
+  <footer>
+    <p>© 2026 Over 40 Wellness · <a href="/optin-page.html">Free Guide</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in-view'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
