@@ -18,23 +18,30 @@
   status = 302
   force = true
 
-# Sleep Revive — TikTok (seller's video page)
+# Sleep Revive — TikTok (seller's TEXT page)
 [[redirects]]
   from = "/go/sleep-revive-tiktok"
-  to = "https://635d25op9859vv2e0cpe5d85-t.hop.clickbank.net/?tid=tictok"
+  to = "https://635d25op9859vv2e0cpe5d85-t.hop.clickbank.net/?tid=tictok&w=transcript"
   status = 302
   force = true
 
-# Sleep Revive — YouTube (seller's video page)
+# Sleep Revive — YouTube (seller's TEXT page)
 [[redirects]]
   from = "/go/sleep-revive-youtube"
-  to = "https://c30786ss465wyt7kq5ub090h1g.hop.clickbank.net/?tid=youtube"
+  to = "https://c30786ss465wyt7kq5ub090h1g.hop.clickbank.net/?tid=youtube&w=transcript"
   status = 302
   force = true
 
-# Sleep Revive — Facebook (seller's video page)
+# Sleep Revive — Facebook (seller's TEXT page)
 [[redirects]]
   from = "/go/sleep-revive-facebook"
-  to = "https://2c35aavp0zt62q5pv4t9193gao.hop.clickbank.net/?tid=Faceb"
+  to = "https://2c35aavp0zt62q5pv4t9193gao.hop.clickbank.net/?tid=Faceb&w=transcript"
+  status = 302
+  force = true
+
+# Sleep Revive — Instagram (seller's TEXT page; bio link + story link sticker)
+[[redirects]]
+  from = "/go/sleep-revive-instagram"
+  to = "https://2c35aavp0zt62q5pv4t9193gao.hop.clickbank.net/?tid=instagram&w=transcript"
   status = 302
   force = true
